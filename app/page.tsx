@@ -1,8 +1,9 @@
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-          <h1>Mobile Accessibility 101</h1>
+      <main className="flex flex-col gap-[32px] row-start-2 items-center">
+          <h1 className={"text-center text-2xl font-bold"}>Mobile Accessibility 101</h1>
+         {/* <a href={"/getting-started"} className={"bg-black dark:bg-white dark:text-black px-10 py-2 rounded-full"}>Start</a>*/}
       </main>
      {/* <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
