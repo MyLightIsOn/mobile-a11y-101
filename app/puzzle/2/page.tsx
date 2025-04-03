@@ -37,7 +37,7 @@ const Page = () => {
     // Choose a random index that is NOT 0
     const correctIndex = Math.floor(Math.random() * (texts.length - 1)) + 1;
 
-    const buttons = texts.map((text, index) => ({
+    const buttons = texts.map((text) => ({
       visible: text,
       aria: "Do not press",
       isCorrect: false,

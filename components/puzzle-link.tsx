@@ -6,7 +6,7 @@ function PuzzleLink({ number }: { number: number }) {
       <a
         href={`puzzle/${number}`}
         className={
-          "h-full w-full block flex items-center justify-center text-6xl font-bold dark:bg-white dark:hover:bg-black dark:hover:text-white hover:underline"
+          "h-full w-full flex items-center justify-center text-6xl font-bold dark:bg-white dark:hover:bg-black dark:hover:text-white hover:underline"
         }
       >
         {number}
