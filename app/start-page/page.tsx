@@ -4,6 +4,7 @@ import PuzzleLink from "@/components/puzzle-link";
 function Page() {
   return (
     <div className="flex flex-wrap h-screen md:h-auto md:flex-row text-black">
+      <div className={"absolute top-0 left-0 w-full h-full"} />
       <PuzzleLink number={1} />
       <PuzzleLink number={2} />
       <PuzzleLink number={3} />
