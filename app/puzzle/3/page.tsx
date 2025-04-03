@@ -8,7 +8,7 @@ const Puzzle3 = () => {
   const [isLockedOut, setIsLockedOut] = useState(false);
   const [timer, setTimer] = useState(10);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (inputValue.trim().toLowerCase() === "sunrise") {
       setIsCorrect(true);
