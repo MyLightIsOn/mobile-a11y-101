@@ -1,24 +1,54 @@
-import React from "react";
+import React, { ReactNode } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
 
-function GhostHelper() {
+interface DialogContentProps {
+  dialogContent: {
+    title: string;
+    description: ReactNode;
+  };
+}
+
+function GhostHelper({ dialogContent }: DialogContentProps) {
   return (
-    <button className={"ghost-helper"}>
-      <div className="ghost-background"></div>
-      <div id="ghost-container">
-        <div id="spooky">
-          <div id="body">
-            <div id="eyes"></div>
-            <div id="mouth"></div>
-            <div id="feet">
-              <div></div>
-              <div></div>
-              <div></div>
+    <Dialog>
+      <DialogTrigger asChild>
+        <button className={"ghost-helper"}>
+          <div className="ghost-background"></div>
+          <div id="ghost-container">
+            <div id="spooky">
+              <div id="body">
+                <div id="eyes"></div>
+                <div id="mouth"></div>
+                <div id="feet">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
             </div>
+            <div id="shadow"></div>
           </div>
-        </div>
-        <div id="shadow"></div>
-      </div>
-    </button>
+        </button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px] bg-white">
+        <DialogHeader>
+          <DialogTitle>{dialogContent.title}</DialogTitle>
+          <>{dialogContent.description}</>
+        </DialogHeader>
+        <DialogFooter>
+          <DialogClose type="submit">Ok</DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
 
