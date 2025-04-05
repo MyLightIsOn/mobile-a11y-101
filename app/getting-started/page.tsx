@@ -1,5 +1,9 @@
+"use client";
+
 import React, { ReactNode } from "react";
 import GhostHelper from "@/components/ghost-helper";
+import { useRouter } from "next/navigation";
+import "@/app/mystery-button.css";
 
 interface DialogContentType {
   title: string;
@@ -32,8 +36,10 @@ const dialogContent: DialogContentType = {
 };
 
 function Page() {
+  const router = useRouter();
+
   return (
-    <div className={"flex flex-col w-screen h-screen overflow-hidden p-4"}>
+    <div className={"flex flex-col p-4"}>
       <div className={"absolute bottom-0 right-0"}>{/* <GhostHelper />*/}</div>
       <h1 className={"text-center mb-10"}>Welcome to Mobile Mysteries</h1>
       <div className={"text-left mb-10 bg-white p-4 rounded-sm info-box"}>
@@ -47,7 +53,14 @@ function Page() {
         <p>* Tap on Spookeasy to see How To Play!</p>
       </div>
 
-      <button className={"mystery-button mx-auto"}>Enter</button>
+      <button
+        aria-label={`Enter`}
+        role={"link"}
+        className={"mystery-button mx-auto"}
+        onClick={() => router.push("/start")}
+      >
+        Enter
+      </button>
       <div className={"fixed bottom-0 right-0"}>
         <GhostHelper dialogContent={dialogContent} />
       </div>

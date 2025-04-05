@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --background: #424f6f;
   --foreground: #171717;
@@ -67,7 +65,6 @@ p {
 
 h1 {
   font-family: "Henny Penny", system-ui;
-
   font-style: normal;
   font-size: 2em;
   letter-spacing: 0.1em;
@@ -94,76 +91,13 @@ h1 {
 
 .info-box {
   box-shadow:
-    rgba(0, 0, 0, 0.16) 0px 1px 4px,
-    rgb(51, 51, 51) 0px 0px 0px 3px;
+    rgba(0, 0, 0, 0.16) 0 1px 4px,
+    rgb(51, 51, 51) 0 0 0 3px;
 }
 .henny-penny-regular {
   font-family: "Henny Penny", system-ui;
   font-weight: 400;
   font-style: normal;
-}
-
-.mystery-button {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  vertical-align: middle;
-  text-decoration: none;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: 600;
-  color: var(--button-text);
-  text-transform: uppercase;
-  padding: 1.25em 2em;
-  background: var(--light-main-color);
-  border: 2px solid var(--button-border);
-  border-radius: 50%;
-  transform-style: preserve-3d;
-  transition:
-    transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    background 150ms cubic-bezier(0, 0, 0.58, 1);
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--dark-main-color);
-    border-radius: inherit;
-    box-shadow:
-      0 0 0 2px var(--button-border),
-      0 0.625em 0 0 var(--button-shadow);
-    transform: translate3d(0, 0.75em, -1em);
-    transition:
-      transform 150ms cubic-bezier(0, 0, 0.58, 1),
-      box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
-  }
-  &:hover,
-  &:focus {
-    background: var(--main-color);
-    transform: translate(0, 0.25em);
-    text-decoration: underline;
-    &::before {
-      box-shadow:
-        0 0 0 5px var(--button-border),
-        0 0.5em 0 0 var(--button-shadow);
-      transform: translate3d(0, 0.5em, -1em);
-    }
-  }
-  &:active {
-    background: var(--main-text-color);
-    transform: translate(0em, 0.75em);
-    &::before {
-      box-shadow:
-        0 0 0 2px var(--button-border),
-        0 0 var(--button-shadow);
-      transform: translate3d(0, 0, -1em);
-    }
-  }
 }
 
 #ghost-container {
