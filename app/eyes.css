@@ -1,0 +1,39 @@
+.spy {
+  display: flex;
+  width: 100%;
+  gap: 0 20px;
+  justify-content: center;
+  padding: 40px 0;
+  align-items: center;
+  height: 50px;
+}
+
+.eye {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: blink 6s infinite;
+  box-shadow: 0 0 5px 2px #ffffffa1;
+}
+
+.eye:first-child {
+  transform: rotate(10deg);
+}
+
+.eye:last-child {
+  transform: rotate(-10deg);
+}
+
+@keyframes blink {
+  0% {
+    height: 10px;
+  }
+  1% {
+    height: 1px;
+  }
+  2% {
+    height: 10px;
+  }
+}

@@ -1,10 +1,80 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import "@/app/eyes.css";
 
 function Page() {
+  const [divsVisibility, setDivsVisibility] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDivsVisibility((currentVisibility) => {
+        const firstHiddenDivIndex = currentVisibility.indexOf(false);
+        if (firstHiddenDivIndex === -1) {
+          return currentVisibility;
+        }
+
+        const newVisibility = [...currentVisibility];
+        newVisibility[firstHiddenDivIndex] = true;
+        return newVisibility;
+      });
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
-    <div className={"bg-black text-center p-4"}>
+    <div className={"bg-black text-center p-4 h-screen"}>
       <h1 className={"font-bold text-2xl pb-2"}>Puzzle 1:</h1>
       <h2 className={"text-xl"}>Heading Into The Shadows</h2>
+      {divsVisibility[0] && (
+        <div className={"absolute top-[20%] left-[20%]"}>
+          <div className="spy">
+            <div className="eye"></div>
+            <div className="eye"></div>
+          </div>
+        </div>
+      )}
+      {divsVisibility[1] && (
+        <div className={"absolute top-[30%] right-[10%]"}>
+          <div className="spy">
+            <div className="eye"></div>
+            <div className="eye"></div>
+          </div>
+        </div>
+      )}
+      {divsVisibility[2] && (
+        <div className={"absolute bottom-[40%] left-[30%]"}>
+          <div className="spy">
+            <div className="eye"></div>
+            <div className="eye"></div>
+          </div>
+        </div>
+      )}
+      {divsVisibility[3] && (
+        <div className={"absolute bottom-[20%] left-[15%]"}>
+          <div className="spy">
+            <div className="eye"></div>
+            <div className="eye"></div>
+          </div>
+        </div>
+      )}
+      {divsVisibility[4] && (
+        <div className={"absolute bottom-[10%] right-[20%]"}>
+          <div className="spy">
+            <div className="eye"></div>
+            <div className="eye"></div>
+          </div>
+        </div>
+      )}
+
       <p
         className={
           "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
@@ -228,7 +298,7 @@ function Page() {
           "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
         }
       >
-        The password is "Headings Help"
+        The passcode is "246"
       </h3>
       <h3
         className={
