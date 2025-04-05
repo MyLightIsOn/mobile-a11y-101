@@ -1,6 +1,32 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import PuzzleFooter from "@/components/puzzle-footer";
 import "@/app/eyes.css";
+
+const dialogContent = {
+  title: "How To Play",
+  description: (
+    <div className={"text-sm text-left mt-6"}>
+      <ol className={"list-decimal px-5"}>
+        <li className={"mb-4"}>
+          This game is designed for mobile screen reader users.
+        </li>
+
+        <li className={"mb-4"}>
+          Explore each page using gestures, taps, and focus navigation.
+        </li>
+
+        <li className={"mb-4"}>
+          Listen carefully as some clues are only spoken, rarely seen.
+        </li>
+
+        <li className={"mb-4"}>
+          Tap the Help button if you get stuck and need a hint.
+        </li>
+      </ol>
+    </div>
+  ),
+};
 
 function Page() {
   const [divsVisibility, setDivsVisibility] = useState([
@@ -33,7 +59,9 @@ function Page() {
   return (
     <div className={"bg-black text-center p-4 h-screen"}>
       <h1 className={"font-bold text-2xl pb-2"}>Puzzle 1:</h1>
-      <h2 className={"text-xl"}>Heading Into The Shadows</h2>
+      <h2 className={"text-xl pb-20 text-white font-bold"}>
+        Heading Into The Shadows
+      </h2>
       {divsVisibility[0] && (
         <div className={"absolute top-[20%] left-[20%]"}>
           <div className="spy">
@@ -321,6 +349,7 @@ function Page() {
       >
         You're way off
       </h3>
+      <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
 }

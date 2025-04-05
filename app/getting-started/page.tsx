@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import GhostHelper from "@/components/ghost-helper";
+import PuzzleFooter from "@/components/puzzle-footer";
 import { useRouter } from "next/navigation";
 import "@/app/mystery-button.css";
 
@@ -61,9 +61,7 @@ function Page() {
       >
         Enter
       </button>
-      <div className={"fixed bottom-0 right-0"}>
-        <GhostHelper dialogContent={dialogContent} />
-      </div>
+      <PuzzleFooter dialogContent={dialogContent} />
     </div>
   );
 }

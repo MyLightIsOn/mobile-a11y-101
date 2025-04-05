@@ -1,5 +1,34 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import "@/app/mystery-button.css";
+import GhostHelper from "@/components/ghost-helper";
+import { useRouter } from "next/navigation";
+import PuzzleFooter from "@/components/puzzle-footer";
+
+const dialogContent = {
+  title: "How To Play",
+  description: (
+    <div className={"text-sm text-left mt-6"}>
+      <ol className={"list-decimal px-5"}>
+        <li className={"mb-4"}>
+          This game is designed for mobile screen reader users.
+        </li>
+
+        <li className={"mb-4"}>
+          Explore each page using gestures, taps, and focus navigation.
+        </li>
+
+        <li className={"mb-4"}>
+          Listen carefully as some clues are only spoken, rarely seen.
+        </li>
+
+        <li className={"mb-4"}>
+          Tap the Help button if you get stuck and need a hint.
+        </li>
+      </ol>
+    </div>
+  ),
+};
 
 interface Button {
   visible: string;
@@ -11,6 +40,7 @@ const Page = () => {
   const [buttons, setButtons] = useState([
     { visible: "", aria: "", isCorrect: false },
   ]);
+  const router = useRouter();
 
   function shuffle(array: Array<Button>) {
     // Fisher-Yates shuffle
@@ -68,9 +98,11 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white text-center p-4">
+    <div className="text-white text-center p-4 relative">
       <h1 className="text-2xl font-bold pb-2">Puzzle 2:</h1>
-      <h2 className="text-xl pb-4">The Forbidden Button</h2>
+      <h2 className="text-xl pb-20 text-white font-bold">
+        The Forbidden Button
+      </h2>
 
       <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
         {buttons?.length > 2 &&
@@ -81,12 +113,19 @@ const Page = () => {
                 handleClick(btn.isCorrect);
               }}
               aria-label={btn.aria}
-              className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
+              className="mystery-button mb-5 h-[80px]"
+              style={{
+                borderRadius: "12px",
+                padding: "4px",
+                fontSize: "14px",
+              }}
             >
               {btn.visible}
             </button>
           ))}
       </div>
+
+      <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
 };
