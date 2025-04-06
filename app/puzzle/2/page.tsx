@@ -1,31 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "@/app/mystery-button.css";
-import GhostHelper from "@/components/ghost-helper";
-import { useRouter } from "next/navigation";
 import PuzzleFooter from "@/components/puzzle-footer";
 
 const dialogContent = {
-  title: "How To Play",
+  title: "Hint",
   description: (
     <div className={"text-sm text-left mt-6"}>
-      <ol className={"list-decimal px-5"}>
-        <li className={"mb-4"}>
-          This game is designed for mobile screen reader users.
-        </li>
-
-        <li className={"mb-4"}>
-          Explore each page using gestures, taps, and focus navigation.
-        </li>
-
-        <li className={"mb-4"}>
-          Listen carefully as some clues are only spoken, rarely seen.
-        </li>
-
-        <li className={"mb-4"}>
-          Tap the Help button if you get stuck and need a hint.
-        </li>
-      </ol>
+      <p>
+        Not all buttons say what they mean. Listen closely. One of them holds
+        the truth!
+      </p>
     </div>
   ),
 };
@@ -40,7 +25,6 @@ const Page = () => {
   const [buttons, setButtons] = useState([
     { visible: "", aria: "", isCorrect: false },
   ]);
-  const router = useRouter();
 
   function shuffle(array: Array<Button>) {
     // Fisher-Yates shuffle

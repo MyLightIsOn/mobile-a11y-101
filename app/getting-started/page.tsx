@@ -28,7 +28,7 @@ const dialogContent: DialogContentType = {
         </li>
 
         <li className={"mb-4"}>
-          Tap the Help button if you get stuck and need a hint.
+          Tap the Spookeasy button if you get stuck and need a hint.
         </li>
       </ol>
     </div>
