@@ -108,7 +108,6 @@ const Page = () => {
             </button>
           ))}
       </div>
-
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );

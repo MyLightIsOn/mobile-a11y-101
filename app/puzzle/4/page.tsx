@@ -1,6 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import "@/app/mystery-button.css";
+import PuzzleFooter from "@/components/puzzle-footer";
+import { Trash2Icon, DeleteIcon } from "lucide-react";
+
+const dialogContent = {
+  title: "Hint",
+  description: (
+    <div className={"text-sm text-left mt-6"}>
+      <p>
+        The table may be invisible, but its structure still speaks. Search the
+        table to uncover the clue.
+      </p>
+    </div>
+  ),
+};
 
 const Page = () => {
   const [inputValue, setInputValue] = useState("");
@@ -40,24 +55,28 @@ const Page = () => {
 
   if (isLockedOut) {
     return (
-      <div className="bg-black text-white text-center p-4">
-        <h1 className="text-2xl font-bold pb-2">Puzzle 4:</h1>
-        <h2 className="text-xl pb-4">Locked Out</h2>
-        <p className="text-red-500">
-          Too many incorrect guesses. Try again in {timer} seconds...
-        </p>
+      <div className="text-white text-center h-screen w-screen absolute top-0 left-0">
+        <div className="text-red-800 bg-red-100 h-full w-full flex items-center justify-center flex-col font-bold text-2xl">
+          WRONG! <br />
+          Try again in:
+          <h3 className={"text-9xl font-bold"}>{timer}</h3>
+          seconds...
+        </div>
       </div>
     );
   }
 
   if (isCorrect) {
     return (
-      <div className="bg-black text-white text-center p-4">
-        <h1 className="text-2xl font-bold pb-2">Puzzle 4:</h1>
-        <h2 className="text-xl pb-4">Correct!</h2>
-        <p className="text-green-400">
-          You've solved it. Your number is <strong>3</strong>.
-        </p>
+      <div className="text-white text-center p-4 h-screen">
+        <h1 className="text-2xl font-bold pb-2">Puzzle 3:</h1>
+        <h2 className="text-xl pb-6">Label Logic</h2>
+        <div className={"bg-green-100 p-10 rounded-md"}>
+          <p className="text-green-900 h-full w-full">
+            You've solved it. The next number is:
+            <strong className={"text-6xl mt-3 block"}>7</strong>
+          </p>
+        </div>
       </div>
     );
   }
@@ -74,81 +93,97 @@ const Page = () => {
   };
 
   return (
-    <div className="bg-black text-white text-center p-4">
-      <h1 className="text-2xl font-bold pb-2">Puzzle 4:</h1>
-      <h2 className="text-xl pb-4">The Table of Secrets</h2>
-
-      {/* Visually hidden table, accessible to screen readers */}
-      <table className="sr-only">
+    <div className="bg-black h-screen w-screen overflow-hidden text-white text-center p-4">
+      <h1 className="text-2xl font-bold pb-2 relative z-10">Puzzle 4:</h1>
+      <h2 className="text-xl pb-4 relative z-10">The Table of Secrets</h2>
+      <div
+        className={"absolute h-screen w-screen top-0 left-0 opacity-40"}
+        style={{
+          backgroundImage: `url('/wizard-desk.jpg')`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      />
+      <table
+        className="absolute -top-[200%] table w-[100px]"
+        title="The Table of Secrets"
+      >
         <thead>
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Location</th>
-            <th scope="col">Status</th>
-            <th scope="col">Clue</th>
+            <th scope="col">Table Area</th>
+            <th scope="col">Contents</th>
+            <th scope="col">Search Results</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Alice</td>
-            <td>Library</td>
-            <td>Offline</td>
-            <td>Nothing here</td>
+            <td>Right Drawer</td>
+            <td>Empty</td>
+            <td>Just dust</td>
           </tr>
           <tr>
-            <td>Bob</td>
-            <td>Garden</td>
-            <td>Active</td>
-            <td>The passcode is 508</td>
+            <td>Left Drawer</td>
+            <td>Faded Photos</td>
+            <td>Nothing on the back</td>
           </tr>
           <tr>
-            <td>Charlie</td>
-            <td>Basement</td>
-            <td>Unknown</td>
-            <td>Wrong cell</td>
+            <td>Underneath</td>
+            <td>Secret Compartment</td>
+            <td>A piece of paper with the number 508 written on it</td>
+          </tr>
+          <tr>
+            <td>Tabletop</td>
+            <td>A cracked mirror</td>
+            <td>Your reflection looks... different</td>
           </tr>
         </tbody>
       </table>
 
       <div className="mt-6">
-        <div className="mb-4 text-xl">Input: {getMaskedInput()}</div>
+        <div className="mb-4 text-xl relative z-10">
+          Passcode: {getMaskedInput()}
+        </div>
         <div className="grid grid-cols-3 gap-4 max-w-xs mx-auto mb-4">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+          {[2, 0, 9, 7, 8, 5].map((num) => (
             <button
               key={num}
               onClick={() => handleClick(num.toString())}
-              className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded"
+              className="mystery-button p-2! w-[60px] h-[55px] mx-auto mb-4"
             >
               {num}
             </button>
           ))}
           <button
+            aria-label={"Delete Last Input"}
             onClick={handleDelete}
-            className="bg-yellow-600 hover:bg-yellow-500 text-white px-4 py-2 rounded col-span-1"
+            className="mystery-button p-2! w-[60px] h-[55px] mx-auto"
           >
-            Back
+            <DeleteIcon className={"mx-auto"} />
           </button>
           <button
             key={0}
             onClick={() => handleClick("0")}
-            className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded"
+            className="mystery-button p-2! w-[60px] h-[55px] mx-auto"
           >
             {0}
           </button>
           <button
+            aria-label={"Clear Input"}
             onClick={handleClear}
-            className="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded col-span-1"
+            className="mystery-button p-2! w-[60px] h-[55px] mx-auto"
           >
-            Clear
-          </button>
-          <button
-            onClick={handleSubmit}
-            className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded col-span-3"
-          >
-            Submit
+            <Trash2Icon className={"mx-auto"} />
           </button>
         </div>
+        <button
+          aria-label={inputValue && "Enter passcode:" + inputValue}
+          onClick={handleSubmit}
+          className="mystery-button p-2! w-[85%] h-[55px] mx-auto mt-8 rounded-md!"
+        >
+          Submit
+        </button>
       </div>
+      <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
 };

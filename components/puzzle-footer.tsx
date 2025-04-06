@@ -12,7 +12,7 @@ interface Props {
 function PuzzleFooter({ dialogContent, url }: Props) {
   return (
     <>
-      <div className={"fixed bottom-0 right-0"}>
+      <div className={"fixed bottom-0 right-0 z-20"}>
         <GhostHelper dialogContent={dialogContent} />
       </div>
       {url && (
