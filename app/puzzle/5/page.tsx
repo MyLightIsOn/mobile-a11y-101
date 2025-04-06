@@ -1,6 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import PuzzleFooter from "@/components/puzzle-footer";
+import "@/app/mystery-button.css";
+
+const dialogContent = {
+  title: "Hint",
+  description: (
+    <div className={"text-sm text-left mt-6"}>
+      <p>
+        Not every label tells the whole story. One field is asking the right
+        question...can you find it?
+      </p>
+    </div>
+  ),
+};
 
 const Page = () => {
   const [inputValues, setInputValues] = useState(Array(6).fill(""));
@@ -15,7 +29,7 @@ const Page = () => {
   };
 
   const handleSubmit = () => {
-    const correctAnswer = inputValues[4].trim().toLowerCase();
+    const correctAnswer = inputValues[2].trim().toLowerCase();
     if (correctAnswer === "ibm") {
       setIsCorrect(true);
     } else {
@@ -38,24 +52,28 @@ const Page = () => {
 
   if (isLockedOut) {
     return (
-      <div className="bg-black text-white text-center p-4">
-        <h1 className="text-2xl font-bold pb-2">Puzzle 5:</h1>
-        <h2 className="text-xl pb-4">Locked Out</h2>
-        <p className="text-red-500">
-          Too many incorrect guesses. Try again in {timer} seconds...
-        </p>
+      <div className="text-white text-center h-screen w-screen absolute top-0 left-0">
+        <div className="text-red-800 bg-red-100 h-full w-full flex items-center justify-center flex-col font-bold text-2xl">
+          WRONG! <br />
+          Try again in:
+          <h3 className={"text-9xl font-bold"}>{timer}</h3>
+          seconds...
+        </div>
       </div>
     );
   }
 
   if (isCorrect) {
     return (
-      <div className="bg-black text-white text-center p-4">
-        <h1 className="text-2xl font-bold pb-2">Puzzle 5:</h1>
-        <h2 className="text-xl pb-4">Correct!</h2>
-        <p className="text-green-400">
-          You've solved it. Your number is <strong>5</strong>.
-        </p>
+      <div className="text-white text-center p-4 h-screen">
+        <h1 className="text-2xl font-bold pb-2">Puzzle 3:</h1>
+        <h2 className="text-xl pb-6">Label Logic</h2>
+        <div className={"bg-green-100 p-10 rounded-md"}>
+          <p className="text-green-900 h-full w-full">
+            You've solved it. The next number is:
+            <strong className={"text-6xl mt-3 block"}>7</strong>
+          </p>
+        </div>
       </div>
     );
   }
@@ -66,15 +84,7 @@ const Page = () => {
       ariaLabel: "Hometown",
     },
     {
-      visible: "Dream Job",
-      ariaLabel: "This is not the correct field",
-    },
-    {
-      visible: "Pet's Name",
-      ariaLabel: "Nope, not this one either",
-    },
-    {
-      visible: "Lucky Number",
+      visible: "Favorite Food",
       ariaLabel: "Favorite Color",
     },
     {
@@ -89,7 +99,7 @@ const Page = () => {
   ];
 
   return (
-    <div className="bg-black text-white text-center p-4">
+    <div className="text-white text-center p-4">
       <h1 className="text-2xl font-bold pb-2">Puzzle 5:</h1>
       <h2 className="text-xl pb-4">Label Logic</h2>
 
@@ -116,14 +126,12 @@ const Page = () => {
           </div>
         ))}
         <div className="text-center pt-4">
-          <button
-            type="submit"
-            className="bg-green-600 hover:bg-green-500 text-white px-6 py-2 rounded"
-          >
+          <button type="submit" className="mystery-button">
             Submit
           </button>
         </div>
       </form>
+      <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
 };

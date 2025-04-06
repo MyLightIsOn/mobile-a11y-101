@@ -1,6 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import PuzzleFooter from "@/components/puzzle-footer";
+
+const dialogContent = {
+  title: "Hint",
+  description: (
+    <div className={"text-sm text-left mt-6"}>
+      <p>
+        Not all buttons say what they mean. Listen closely. One of them holds
+        the truth!
+      </p>
+    </div>
+  ),
+};
 
 const Puzzle3 = () => {
   const [inputValue, setInputValue] = useState("");
@@ -143,6 +156,7 @@ const Puzzle3 = () => {
           Submit
         </button>
       </form>
+      <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
 };
