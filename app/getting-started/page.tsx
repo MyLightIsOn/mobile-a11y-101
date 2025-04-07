@@ -40,7 +40,8 @@ function Page() {
 
   return (
     <div className={"flex flex-col p-4"}>
-      <div className={"absolute bottom-0 right-0"}>{/* <GhostHelper />*/}</div>
+      {/* This overlay makes it so users have to use a screen reader to get into the game. I have disabled it for now. */}
+      {/*<div className={"absolute bottom-0 right-0"} />*/}
       <h1 className={"text-center mb-10"}>Welcome to Mobile Mysteries</h1>
       <div className={"text-left mb-10 bg-white p-4 rounded-sm info-box"}>
         <p className={"text-black"}>
