@@ -2,7 +2,6 @@
 
 import React, { ReactNode } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
-import { useRouter } from "next/navigation";
 import "@/app/mystery-button.css";
 
 interface DialogContentType {
@@ -36,13 +35,21 @@ const dialogContent: DialogContentType = {
 };
 
 function Page() {
-  const router = useRouter();
-
   return (
-    <div className={"flex flex-col p-4"}>
+    <div
+      className={"flex flex-col p-4 h-screen"}
+      style={{
+        backgroundImage: "url('/front-door.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       {/* This overlay makes it so users have to use a screen reader to get into the game. I have disabled it for now. */}
       {/*<div className={"absolute bottom-0 right-0"} />*/}
-      <h1 className={"text-center mb-10"}>Welcome to Mobile Mysteries</h1>
+      <h1 className={"text-center mb-10"}>
+        Welcome to the Mobile Mystery House
+      </h1>
       <div className={"text-left mb-10 bg-white p-4 rounded-sm info-box"}>
         <p className={"text-black"}>
           You’ve entered a place where everything is not what it seems. Don’t
@@ -53,15 +60,14 @@ function Page() {
         <p>Turn on your screen reader. Follow the clues. Solve the mystery!</p>
         <p>* Tap on Spookeasy to see How To Play!</p>
       </div>
-
-      <button
-        aria-label={`Enter`}
-        role={"link"}
-        className={"mystery-button mx-auto"}
-        onClick={() => router.push("/start")}
+      <a
+        href={"/start"}
+        className={
+          "text-white underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed w-fit mx-auto"
+        }
       >
         Enter
-      </button>
+      </a>
       <PuzzleFooter dialogContent={dialogContent} />
     </div>
   );

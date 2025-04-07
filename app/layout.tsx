@@ -13,7 +13,7 @@ const geistMono = Henny_Penny({
 });
 
 export const metadata: Metadata = {
-  title: "Mobile Mysteries",
+  title: "Mobile Mystery House",
   description:
     "Solve the puzzles to learn the basics of using a mobile screen reader",
 };
