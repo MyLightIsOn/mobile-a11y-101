@@ -70,7 +70,7 @@ const Page = () => {
 
   function handleClick(isCorrect: boolean) {
     if (isCorrect) {
-      alert("🎉 Correct! The password is 'midnight'");
+      alert("🎉 Correct! The clue is 'midnight'");
     } else {
       const newButtons: Array<Button> = generateButtons();
       setButtons(newButtons);
@@ -95,6 +95,13 @@ const Page = () => {
       <h2 className="text-xl pb-20 text-white font-bold">
         The Forbidden Button
       </h2>
+
+      <p className={"sr-only"}>
+        You enter the living room. The fireplace has long gone cold, but
+        something hums faintly on the coffee table. A set of old buttons sit in
+        a neat row—none marked correctly, all tempting. One of them knows the
+        way forward.
+      </p>
 
       <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
         {buttons?.length > 2 &&

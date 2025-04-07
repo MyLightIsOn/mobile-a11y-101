@@ -62,7 +62,6 @@ function Page() {
       <h2 className={"text-xl pb-20 text-white font-bold relative z-10"}>
         Heading Into The Shadows
       </h2>
-
       {divsVisibility[0] && (
         <div className={"absolute top-[20%] left-[20%]"}>
           <div className="spy">
@@ -103,10 +102,15 @@ function Page() {
           </div>
         </div>
       )}
-
+      <p className={"sr-only"}>
+        The air grows colder as you descend into the basement. The light
+        flickers and fades, then darkness. You hear the creak of old wood and
+        nothing else. You’ll need to feel your way through this one… with your
+        ears.
+      </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         You reached this because you are swiping. Instead, try to skip around by
@@ -115,319 +119,318 @@ function Page() {
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Stop swiping. It will take you much longer to get to the headings.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         I see that you don't believe me. You are going to learn the hard way.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Are there 10 more or 100? Who knows...
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
-
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         You found a header, but this is not the right one. Keep looking.
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Not this one either
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Nope
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Getting closer
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Almost
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         The passcode is "246"
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         You missed it
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Turn back around
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         You're way off
       </h3>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         You reached this because you are swiping
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Stop swiping. It will take you much longer to get to the headings.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         I see that you don't believe me. You are going to learn the hard way.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
         Are there 10 more or 100? Who knows...
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <p
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Suprise! Here's another paragraphy.
+        Surprise! Another useless paragraph of text.
       </p>
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
