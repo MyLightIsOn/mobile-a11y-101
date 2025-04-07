@@ -93,17 +93,17 @@ const Page = () => {
   };
 
   return (
-    <div className="bg-black h-screen w-screen overflow-hidden text-white text-center p-4">
+    <div
+      className="bg-black h-screen w-screen overflow-hidden text-white text-center p-4"
+      style={{
+        backgroundImage: "url('/bedroom.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <h1 className="text-2xl font-bold pb-2 relative z-10">Puzzle 4:</h1>
       <h2 className="text-xl pb-4 relative z-10">The Table of Secrets</h2>
-      <div
-        className={"absolute h-screen w-screen top-0 left-0 opacity-40"}
-        style={{
-          backgroundImage: `url('/wizard-desk.jpg')`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      />
       <table
         className="absolute -top-[200%] table w-[100px]"
         title="The Table of Secrets"

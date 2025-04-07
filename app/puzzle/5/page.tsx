@@ -99,7 +99,15 @@ const Page = () => {
   ];
 
   return (
-    <div className="text-white text-center p-4">
+    <div
+      className="text-white text-center p-4 h-screen bg-black "
+      style={{
+        backgroundImage: "url('/hallway.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <h1 className="text-2xl font-bold pb-2">Puzzle 5:</h1>
       <h2 className="text-xl pb-4">Label Logic</h2>
 

@@ -44,9 +44,22 @@ function Page() {
   }, []);
 
   return (
-    <div className={"bg-black text-center p-4 h-screen"}>
-      <h1 className={"font-bold text-2xl pb-2"}>Puzzle 1:</h1>
-      <h2 className={"text-xl pb-20 text-white font-bold"}>
+    <div
+      className={"bg-black text-center p-4 h-screen"}
+      style={{
+        backgroundImage: "url('/basement.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <div
+        className={
+          "absolute bg-black top-0 left-0 opacity-60 w-screen h-screen"
+        }
+      />
+      <h1 className={"font-bold text-2xl pb-2 relative z-10"}>Puzzle 1:</h1>
+      <h2 className={"text-xl pb-20 text-white font-bold relative z-10"}>
         Heading Into The Shadows
       </h2>
 

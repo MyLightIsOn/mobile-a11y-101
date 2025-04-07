@@ -82,7 +82,15 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="text-white text-center p-4 relative">
+    <div
+      className="bg-black text-white text-center p-4 relative h-screen"
+      style={{
+        backgroundImage: "url('/living-room.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <h1 className="text-2xl font-bold pb-2">Puzzle 2:</h1>
       <h2 className="text-xl pb-20 text-white font-bold">
         The Forbidden Button
