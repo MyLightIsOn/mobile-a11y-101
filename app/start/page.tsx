@@ -14,6 +14,12 @@ function Page() {
     >
       {/*Uncomment overlay to raise difficult*/}
       {/*<div className={"absolute top-0 left-0 w-screen h-screen z-10"} />*/}
+      <p className={"sr-only"}>
+        Instructions: Each room in this house contains a puzzle. When you enter,
+        listen to the instructions, it may contain clues! Make sure to write
+        down each clue as you will need it to solve the final puzzle. Choose a
+        door to begin your search.
+      </p>
       {Array.from({ length: 6 }).map((_, index) => (
         <PuzzleLink key={`puzzle-${index}`} number={index} />
       ))}
