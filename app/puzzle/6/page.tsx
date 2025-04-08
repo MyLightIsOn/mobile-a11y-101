@@ -24,13 +24,11 @@ function Page() {
       />
       <h1 className="text-2xl font-bold pb-2 relative z-10">Puzzle 6:</h1>
       <h2 className="text-xl pb-6 relative z-10">The Blank Tome</h2>
-
-      <main className="sr-only" role="main">
-        <p>
-          The Silent Tome lies open. Its secrets are bound in chapters few can
-          read.
-        </p>
-      </main>
+      <p className={"sr-only"}>
+        Dust swirls in the moonlight as you step between towering bookshelves.
+        On a pedestal in the center, an ancient book lies open, its pages blank.
+        Search the text not with your eyes, but with intent.
+      </p>
 
       {Array.from({ length: 10 }).map((_, index) => {
         const chapterNum = index + 1;

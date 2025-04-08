@@ -96,7 +96,7 @@ const Page = () => {
     <div
       className="bg-black h-screen w-screen overflow-hidden text-white text-center p-4"
       style={{
-        backgroundImage: "url('/bedroom.webp')",
+        backgroundImage: "url('/dining.webp')",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -104,6 +104,12 @@ const Page = () => {
     >
       <h1 className="text-2xl font-bold pb-2 relative z-10">Puzzle 4:</h1>
       <h2 className="text-xl pb-4 relative z-10">The Table of Secrets</h2>
+      <p className={"sr-only"}>
+        The dining room is still set, as if waiting for guests who never came.
+        At its center, a grand wooden table sits in silence. Drawers, nooks, and
+        shadows hide its past. Search every inch!
+      </p>
+
       <table
         className="absolute -top-[200%] table w-[100px]"
         title="The Table of Secrets"
@@ -129,7 +135,7 @@ const Page = () => {
           <tr>
             <td>Underneath</td>
             <td>Secret Compartment</td>
-            <td>A piece of paper with the number 508 written on it</td>
+            <td>A piece of paper with the number 131 written on it</td>
           </tr>
           <tr>
             <td>Tabletop</td>
@@ -144,7 +150,7 @@ const Page = () => {
           Passcode: {getMaskedInput()}
         </div>
         <div className="grid grid-cols-3 gap-4 max-w-xs mx-auto mb-4">
-          {[2, 0, 9, 7, 8, 5].map((num) => (
+          {[1, 2, 3, 4, 5, 6].map((num) => (
             <button
               key={num}
               onClick={() => handleClick(num.toString())}

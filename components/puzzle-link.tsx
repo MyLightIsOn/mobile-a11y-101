@@ -8,9 +8,9 @@ function PuzzleLink({ number }: { number: number }) {
     "basement",
     "living room",
     "gallery",
-    "bedroom",
+    "dining room",
     "hallway",
-    "study",
+    "library",
   ];
 
   return (

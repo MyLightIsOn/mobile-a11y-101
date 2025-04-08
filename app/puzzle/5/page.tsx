@@ -18,7 +18,6 @@ const dialogContent = {
 
 const Page = () => {
   const [inputValues, setInputValues] = useState(Array(6).fill(""));
-  const [isCorrect, setIsCorrect] = useState(false);
   const [isLockedOut, setIsLockedOut] = useState(false);
   const [timer, setTimer] = useState(10);
 
@@ -30,8 +29,8 @@ const Page = () => {
 
   const handleSubmit = () => {
     const correctAnswer = inputValues[2].trim().toLowerCase();
-    if (correctAnswer === "ibm") {
-      setIsCorrect(true);
+    if (correctAnswer === "enter") {
+      alert("🎉 Correct! The passcode is '412'");
     } else {
       setIsLockedOut(true);
       setTimer(10);
@@ -70,7 +69,7 @@ const Page = () => {
         <h2 className="text-xl pb-6">Label Logic</h2>
         <div className={"bg-green-100 p-10 rounded-md"}>
           <p className="text-green-900 h-full w-full">
-            You've solved it. The next number is:
+            You've solved it. The passcode number is: 332
             <strong className={"text-6xl mt-3 block"}>7</strong>
           </p>
         </div>
@@ -80,21 +79,20 @@ const Page = () => {
 
   const fields = [
     {
-      visible: "Favorite Color",
-      ariaLabel: "Hometown",
+      visible: "Library",
+      ariaLabel: "Study",
     },
     {
-      visible: "Favorite Food",
-      ariaLabel: "Favorite Color",
+      visible: "Attic",
+      ariaLabel: "Pantry",
     },
     {
-      visible: "Hometown",
-      ariaLabel:
-        "Answer this question in the field: Which company was the first screen reader invented at?",
+      visible: "Study",
+      ariaLabel: "This is the right field. Type Enter and see what happens.",
     },
     {
-      visible: "Lucky Number",
-      ariaLabel: "Actually, you are unlucky if you got here",
+      visible: "Pantry",
+      ariaLabel: "Attic",
     },
   ];
 
@@ -110,6 +108,11 @@ const Page = () => {
     >
       <h1 className="text-2xl font-bold pb-2">Puzzle 5:</h1>
       <h2 className="text-xl pb-4">Label Logic</h2>
+      <p className={"sr-only"}>
+        The hallway stretches longer than it should, lined with mismatched doors
+        and flickering sconces. Each door is labeled—but the labels lie. Type
+        the word Enter into the right field?
+      </p>
 
       <form
         onSubmit={(e) => {
