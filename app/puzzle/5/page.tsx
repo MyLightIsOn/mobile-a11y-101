@@ -62,21 +62,6 @@ const Page = () => {
     );
   }
 
-  if (isCorrect) {
-    return (
-      <div className="text-white text-center p-4 h-screen">
-        <h1 className="text-2xl font-bold pb-2">Puzzle 3:</h1>
-        <h2 className="text-xl pb-6">Label Logic</h2>
-        <div className={"bg-green-100 p-10 rounded-md"}>
-          <p className="text-green-900 h-full w-full">
-            You've solved it. The passcode number is: 332
-            <strong className={"text-6xl mt-3 block"}>7</strong>
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   const fields = [
     {
       visible: "Library",
