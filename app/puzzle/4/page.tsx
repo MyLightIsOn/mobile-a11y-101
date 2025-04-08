@@ -19,7 +19,6 @@ const dialogContent = {
 
 const Page = () => {
   const [inputValue, setInputValue] = useState("");
-  const [isCorrect, setIsCorrect] = useState(false);
   const [isLockedOut, setIsLockedOut] = useState(false);
   const [timer, setTimer] = useState(10);
 
@@ -33,8 +32,8 @@ const Page = () => {
   const handleDelete = () => setInputValue(inputValue.slice(0, -1));
 
   const handleSubmit = () => {
-    if (inputValue === "508") {
-      setIsCorrect(true);
+    if (inputValue === "131") {
+      alert("🎉 Correct! Remember, the passcode is '131'");
     } else {
       setIsLockedOut(true);
       setTimer(10);
@@ -61,21 +60,6 @@ const Page = () => {
           Try again in:
           <h3 className={"text-9xl font-bold"}>{timer}</h3>
           seconds...
-        </div>
-      </div>
-    );
-  }
-
-  if (isCorrect) {
-    return (
-      <div className="text-white text-center p-4 h-screen">
-        <h1 className="text-2xl font-bold pb-2">Puzzle 3:</h1>
-        <h2 className="text-xl pb-6">Label Logic</h2>
-        <div className={"bg-green-100 p-10 rounded-md"}>
-          <p className="text-green-900 h-full w-full">
-            You've solved it. The next number is:
-            <strong className={"text-6xl mt-3 block"}>7</strong>
-          </p>
         </div>
       </div>
     );

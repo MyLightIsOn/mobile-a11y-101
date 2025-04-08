@@ -47,7 +47,6 @@ function Page() {
                 <br />
                 I give context without being mean.
                 <br />
-                The answer is: <strong>aria-label</strong>
               </p>
             ) : (
               <p>

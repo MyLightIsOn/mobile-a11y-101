@@ -30,7 +30,7 @@ const Page = () => {
   const handleSubmit = () => {
     const correctAnswer = inputValues[2].trim().toLowerCase();
     if (correctAnswer === "enter") {
-      alert("🎉 Correct! The passcode is '412'");
+      alert("🎉 Correct! The passcode is '332'");
     } else {
       setIsLockedOut(true);
       setTimer(10);
