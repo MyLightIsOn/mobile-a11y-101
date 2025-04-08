@@ -171,7 +171,36 @@ function Page() {
           "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
+        Seriously, you are insane.
+      </p>
+      <p
+        className={
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
+        }
+      >
         Surprise! Another useless paragraph of text.
+      </p>
+      <p
+        className={
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
+        }
+      >
+        Surprise! Another useless paragraph of text.
+      </p>
+      <p
+        className={
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
+        }
+      >
+        If you have gotten to this point, you at least know how to swipe with a
+        screen reader.
+      </p>
+      <p
+        className={
+          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
+        }
+      >
+        But you need some serious help.
       </p>
       <p
         className={
@@ -234,35 +263,7 @@ function Page() {
           "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        Surprise! Another useless paragraph of text.
-      </p>
-      <p
-        className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
-        }
-      >
-        Surprise! Another useless paragraph of text.
-      </p>
-      <p
-        className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
-        }
-      >
-        Surprise! Another useless paragraph of text.
-      </p>
-      <p
-        className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
-        }
-      >
-        Surprise! Another useless paragraph of text.
-      </p>
-      <p
-        className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
-        }
-      >
-        Surprise! Another useless paragraph of text.
+        OMG! STOOOOOOOOOOOOOOP!!!
       </p>
       <p
         className={
@@ -297,7 +298,7 @@ function Page() {
           "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
         }
       >
-        You found a header, but this is not the right one. Keep looking.
+        You found a heading, but this is not the right one. Keep looking.
       </h3>
       <h3
         className={

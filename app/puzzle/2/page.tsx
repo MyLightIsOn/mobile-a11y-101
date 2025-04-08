@@ -70,7 +70,7 @@ const Page = () => {
 
   function handleClick(isCorrect: boolean) {
     if (isCorrect) {
-      alert("🎉 Correct! The clue is 'midnight'");
+      alert("🎉 Correct! The passcode is '412'");
     } else {
       const newButtons: Array<Button> = generateButtons();
       setButtons(newButtons);

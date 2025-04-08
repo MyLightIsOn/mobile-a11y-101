@@ -25,10 +25,16 @@ const Puzzle3 = () => {
         The portraits are quiet. But one voice lingers...
       </h2>
 
+      <p className={"sr-only"}>
+        You step into a cold, breezy with no windows. The walls are lined with
+        dusty portraits. Their eyes seem to follow you. The frames are aged, the
+        faces silent, but one looks like they have a secret.
+      </p>
+
       <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
         <img
           src="/husband.webp"
-          alt="A faded portrait of a stern-looking husband. On the back: 'Taxes were the real horror.'"
+          alt="A faded portrait of a stern-looking husband. On the back of the painting it says: 'Taxes were the real horror.'"
           className="w-full h-auto"
         />
         <img
@@ -38,12 +44,12 @@ const Puzzle3 = () => {
         />
         <img
           src="/daughter.webp"
-          alt="A young girl with a distant smile. On the back: 'The password is echo.'"
+          alt="A young girl with a mischievous smile. On the back: 'The code is 145.'"
           className="w-full h-auto"
         />
         <img
           src="/dog.webp"
-          alt="A shaggy dog in a tiny suit. On the back: 'Woof! Woof!'"
+          alt="A shaggy, but happy dog. On the back: 'Woof! Woof!'"
           className="w-full h-auto"
         />
       </div>
