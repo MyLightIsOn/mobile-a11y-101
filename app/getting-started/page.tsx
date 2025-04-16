@@ -37,12 +37,13 @@ const dialogContent: DialogContentType = {
 function Page() {
   return (
     <div
-      className={"flex flex-col p-4 h-screen justify-center"}
+      className={"flex flex-col p-4 min-h-screen justify-center"}
       style={{
         backgroundImage: "url('/front-door.webp')",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* This overlay makes it so users have to use a screen reader to get into the game. I have disabled it for now. */}
@@ -64,14 +65,24 @@ function Page() {
         <p>Turn on your screen reader. Follow the clues. Solve the mystery!</p>
         <p>* Tap on Spookeasy to see How To Play!</p>
       </div>
-      <a
-        href={"/start"}
-        className={
-          "text-white underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed w-fit mx-auto"
-        }
-      >
-        Enter
-      </a>
+      <div className={"flex pb-56 gap-4"}>
+        <a
+          href={"/start"}
+          className={
+            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-1/2"
+          }
+        >
+          Practice
+        </a>
+        <a
+          href={"/start"}
+          className={
+            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-1/2"
+          }
+        >
+          Enter
+        </a>
+      </div>
       <PuzzleFooter dialogContent={dialogContent} />
     </div>
   );
