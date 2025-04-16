@@ -5,22 +5,24 @@ import "@/app/parchment.css";
 
 function Parchment() {
   useEffect(() => {
-    if (window && document) {
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
       // First call to define "parchment" height
-      document.onload = ScrollHeight();
+      // @ts-ignore
+      window.onload = ScrollHeight();
 
       // Redraw when viewport is modified
-      window.addEventListener("resize", function (event) {
+      window.addEventListener("resize", function () {
         ScrollHeight();
       });
 
-      function ScrollHeight() {
-        var content = document.querySelector("#parchment");
-        var container = document.querySelector("#contain");
+      function ScrollHeight(): void {
+        const content = document.querySelector<HTMLDivElement>("#parchment");
+        const container = document.querySelector<HTMLDivElement>("#contain");
 
         // SVG feTurbulence can modify all others elements, for this reason "parchment" is in another <div> and in absolute position.
         // so for a better effect, absolute height is defined by his content.
-        if (content) content.style.height = container?.offsetHeight + "px";
+        if (content && container)
+          content.style.height = `${container.offsetHeight}px`;
       }
     }
   }, []);
