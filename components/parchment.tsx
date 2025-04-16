@@ -29,60 +29,63 @@ function Parchment() {
 
   return (
     <div id={"parchment-bg"}>
-      <div id="parchment"></div>
+      <div className={"sheet-container"}>
+        <div id="parchment"></div>
+      </div>
       <div id="contain">
-        <p className="inkTitle">In hoc Signo vinces</p>
+        <h2 className="inkTitle pt-20 pb-10">To the One Who Dares Enter</h2>
         {/* <p id="labarum">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Chi_Rho.svg/1200px-Chi_Rho.svg.png" />
         </p>*/}
-        <p className={"letter-text"}>
-          Ye old book! dolor sit amet, consectetur adipiscing elit. Sed non
-          risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
-          ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula
-          massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci
-          nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl
-          sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae,
-          consequat in, pretium a, enim. Pellentesque congue. Ut in risus
-          volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
-          Praesent egestas leo in pede. Praesent blandit odio eu enim.
-          Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum
-          primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-          Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum.
-          Maecenas adipiscing ante non diam sodales hendrerit.
-        </p>
-        <p className={"letter-text"}>
-          Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut
-          orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius,
-          ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus
-          sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer
-          id felis. Curabitur aliquet pellentesque diam. Integer quis metus
-          vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer
-          adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla
-          et sapien. Integer tortor tellus, aliquam faucibus, convallis id,
-          congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat,
-          augue non elementum posuere, metus purus iaculis lectus, et tristique
-          ligula justo vitae magna.
-        </p>
+        <section id={"first-section"}>
+          <p className={"letter-text"}>
+            I once roamed these halls freely, until something precious to me
+            vanished within its walls. It is a treasure not of gold, but of
+            great value nonetheless. I’ve searched every room—yet it continues
+            to elude me.
+          </p>
+          <p className={"letter-text"}>
+            If you are clever, brave, and able to listen beyond what eyes can
+            see, you may find it. And if you do… it is yours to keep.
+          </p>
+        </section>
 
-        <p className="cachet">
-          <img src="https://i.postimg.cc/4NBYNqCR/22.png" />
-        </p>
-        <div id="signature">
-          Imperator Caesar Flavius Constantinus
-          <br />
-          Pius Felix Invictus Augustus
-        </div>
+        <section>
+          <p className={"letter-text"}>
+            To begin your search, you must master these methods:
+          </p>
+          <ul className="list-disc list-inside letter-list">
+            <li>Swipe left and right to explore each detail</li>
+            <li>Look for headings to guide your path</li>
+            <li>Examine all parts of a page, not just the top</li>
+          </ul>
+          <p className={"letter-text"}>
+            Ignore the silence. Let your screen reader be your lantern.
+          </p>
+        </section>
+
+        <section className="mt-6">
+          <p className="cachet">
+            <img src="https://i.postimg.cc/4NBYNqCR/22.png" />
+          </p>
+          <div id="signature">
+            Imperator Caesar Flavius Constantinus
+            <br />
+            Pius Felix Invictus Augustus
+          </div>
+        </section>
       </div>
+
       <svg>
         <filter id="wavy2">
-          <feTurbulence
+          {/*<feTurbulence
             x="0"
             y="0"
             baseFrequency="0.02"
             numOctaves="5"
             seed="1"
-          />
-          <feDisplacementMap in="SourceGraphic" scale="20" />
+          />*/}
+          <feDisplacementMap in="SourceGraphic" scale="5" />
         </filter>
       </svg>
     </div>
