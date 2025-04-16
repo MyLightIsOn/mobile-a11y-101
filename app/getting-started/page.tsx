@@ -67,7 +67,7 @@ function Page() {
       </div>
       <div className={"flex pb-56 gap-4"}>
         <a
-          href={"/start"}
+          href={"/practice"}
           className={
             "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-1/2"
           }
