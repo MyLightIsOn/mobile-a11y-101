@@ -16,7 +16,7 @@ function Page() {
       <div
         className={"absolute h-screen w-screen top-0 left-0 opacity-60"}
         style={{
-          backgroundImage: `url('/old_book.jpg')`,
+          backgroundImage: `url('/library.webp')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "right center",
