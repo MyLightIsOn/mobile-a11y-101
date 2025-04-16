@@ -1,4 +1,5 @@
 import React from "react";
+import Parchment from "@/components/parchment";
 
 function Page() {
   return (
@@ -10,6 +11,9 @@ function Page() {
         }
       >
         <p>Practice</p>
+      </div>
+      <div className={"relative"}>
+        <Parchment />
       </div>
     </div>
   );
