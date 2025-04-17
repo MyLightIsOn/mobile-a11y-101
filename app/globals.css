@@ -283,3 +283,16 @@ h2 {
     transform: scale(0.8);
   }
 }
+
+.practice-section h2 {
+  font-weight: bold;
+  font-size: 1.15em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.practice-section section {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 30px;
+}
