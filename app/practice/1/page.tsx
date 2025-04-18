@@ -11,9 +11,13 @@ function Page() {
           screen. Swiping left moves backward. This is how you explore the page
           element by element using a screen reader.
         </p>
-        <div className="bg-gray-200 text-center text-black p-6 rounded mb-6">
-          {/* Video placeholder */}
-          <p className="italic">[Video demo coming soon]</p>
+        <div className="text-center text-black rounded mb-6">
+          <iframe
+            src="https://www.youtube.com/embed/6_yTFl05KMg"
+            title=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
         Turn on your screen reader now and practice swiping left and right on
         the text below. Notice how its reading line by line.

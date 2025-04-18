@@ -10,9 +10,13 @@ function Page() {
           The Rotor (on iOS) or Reader Menu (on Android) helps you jump through
           content by type—like headings, links, lists, and more.
         </p>
-        <div className="bg-gray-200 text-center text-black p-6 rounded mb-6">
-          {/* Video placeholder */}
-          <p className="italic">[Video demo coming soon]</p>
+        <div className="text-center text-black rounded mb-6">
+          <iframe
+            src="https://www.youtube.com/embed/qVSb2ydXweI"
+            title=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
         Turn on your screen reader and use the rotor or menu to browse this page
         by content type. Try jumping to each heading, then the list, and then
