@@ -20,7 +20,7 @@ function Page() {
           <p>Start with Lesson 1, and take your time exploring each page.</p>
         </div>
 
-        <div className="flex flex-col pt-10">
+        <div className="flex flex-col pt-10 max-w-[500px] mx-auto">
           <a className="bg-white text-center p-3 mb-8" href="/practice/1">
             <span className={"font-bold"}>Lesson 1 - Swiping</span>
             <br />
