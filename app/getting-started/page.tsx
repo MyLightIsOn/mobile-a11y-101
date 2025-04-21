@@ -23,11 +23,16 @@ const dialogContent: DialogContentType = {
         </li>
 
         <li className={"mb-4"}>
-          Listen carefully as some clues are only spoken, rarely seen.
+          Don’t trust your eyes! What’s hidden may only be revealed through
+          other senses.
         </li>
 
         <li className={"mb-4"}>
-          Tap the Spookeasy button if you get stuck and need a hint.
+          Turn on your screen reader. Follow the clues. Solve the mystery!
+        </li>
+
+        <li className={"mb-4"}>
+          If you get stuck on a puzzle, tap me for a hint.
         </li>
       </ol>
     </div>
@@ -48,28 +53,12 @@ function Page() {
     >
       {/* This overlay makes it so users have to use a screen reader to get into the game. I have disabled it for now. */}
       {/*<div className={"absolute bottom-0 right-0"} />*/}
-      <h1 className={"text-center mb-10"}>
-        Welcome to the Mobile Mystery House
-      </h1>
-      <div
-        className={
-          "text-left mb-10 bg-white p-4 rounded-sm info-box max-w-[500px] mx-auto"
-        }
-      >
-        <p className={"text-black"}>
-          You stand at the door of the Mobile Mystery House. A place where
-          everything is not what it seems. Don’t trust your eyes! What’s hidden
-          may only be revealed through other senses.
-        </p>
-
-        <p>Turn on your screen reader. Follow the clues. Solve the mystery!</p>
-        <p>* Tap on Spookeasy to see How To Play!</p>
-      </div>
-      <div className={"flex pb-56 gap-4"}>
+      <h1 className={"text-center text-2xl font-bold mb-4"}>Welcome</h1>
+      <div className={"flex flex-col mx-auto gap-4 max-w-[500px]"}>
         <a
           href={"/practice"}
           className={
-            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-1/2"
+            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-full min-w-60   bg-black"
           }
         >
           Practice
@@ -77,7 +66,7 @@ function Page() {
         <a
           href={"/start"}
           className={
-            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-1/2"
+            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-full bg-black"
           }
         >
           Enter
