@@ -13,6 +13,7 @@ function Page() {
         </p>
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
+            className={"w-full min-h-[300px]"}
             src="https://www.youtube.com/embed/H6usoQxszi8"
             title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

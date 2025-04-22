@@ -12,12 +12,25 @@ function Page() {
         </p>
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
+            className={"w-full min-h-[300px]"}
             src="https://www.youtube.com/embed/H6usoQxszi8"
             title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
           <p className={"italic"}>How To Use The Rotor On An iPhone Video</p>
+        </div>
+        <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
+          <iframe
+            className={"w-full min-h-[300px]"}
+            src="https://www.youtube.com/embed/O-U7u6POygQ"
+            title=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+          <p className={"italic"}>
+            How To Use The Reading Controls On An Andorid Phone
+          </p>
         </div>
         Turn on your screen reader and use the rotor or menu to browse this page
         by content type. Try jumping to each heading, then the list, and then

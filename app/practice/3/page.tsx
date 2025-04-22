@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 const Page = () => {
   const activeElementRef = useRef<HTMLElement | null>(null);
@@ -25,9 +25,17 @@ const Page = () => {
           Screen readers allow you to interact with buttons, links, and form
           fields by double-tapping or using specific gestures.
         </p>
-        <div className="bg-gray-200 text-center text-black p-6 rounded mb-6">
-          {/* Video placeholder */}
-          <p className="italic">[Video demo coming soon]</p>
+        <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
+          <iframe
+            className={"w-full min-h-[300px]"}
+            src="https://www.youtube.com/embed/6OU0BCemuIE"
+            title=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+          <p className={"italic"}>
+            How To Activate Interactive Elements on a Mobile Screen Reader
+          </p>
         </div>
         Turn on your screen reader and try activating each element below. Use
         swipe navigation or jump to the next interactive element using your
