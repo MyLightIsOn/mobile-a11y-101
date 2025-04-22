@@ -35,7 +35,7 @@ function Page() {
             <br />
             Interact with buttons and links
           </a>
-          <a className="bg-white text-center p-3 mb-8" href="/practice/4">
+          {/*<a className="bg-white text-center p-3 mb-8" href="/practice/4">
             <span className={"font-bold"}>Lesson 4 - Input Fields</span> <br />
             Typing into labeled forms
           </a>
@@ -43,7 +43,7 @@ function Page() {
             <span className={"font-bold"}>Lesson 5 - Navigating Tables</span>{" "}
             <br />
             Understand structured data
-          </a>
+          </a>*/}
         </div>
       </div>
     </div>

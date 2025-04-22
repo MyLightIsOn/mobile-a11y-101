@@ -1,7 +1,20 @@
 "use client";
+import { useRef } from "react";
 
 const Page = () => {
-  const showAlert = (message: string) => alert(message);
+  const activeElementRef = useRef<HTMLElement | null>(null);
+
+  const showAlert = (message: string) => {
+    // Store the currently focused element
+    activeElementRef.current = document.activeElement as HTMLElement;
+
+    alert(message);
+
+    // Return focus to the element that was active before the alert
+    if (activeElementRef.current) {
+      activeElementRef.current.focus();
+    }
+  };
 
   return (
     <div className="p-4">
