@@ -2,10 +2,19 @@ import React from "react";
 
 function Page() {
   return (
-    <div className="p-4">
+    <div
+      className="p-4 min-h-screen"
+      style={{
+        backgroundImage: "url('/playground.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <h1 className="text-center mb-10">Lesson 2: Rotor / Menu Navigation</h1>
 
-      <div className="text-left bg-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
+      <div className="text-left bg-black/50 text-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
           The Rotor (on iOS) or Reader Menu (on Android) helps you jump through
           content by type—like headings, links, lists, and more.
@@ -18,7 +27,9 @@ function Page() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <p className={"italic"}>How To Use The Rotor On An iPhone Video</p>
+          <p className={"italic text-white"}>
+            How To Use The Rotor On An iPhone Video
+          </p>
         </div>
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
@@ -28,7 +39,7 @@ function Page() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <p className={"italic"}>
+          <p className={"italic text-white"}>
             How To Use The Reading Controls On An Andorid Phone
           </p>
         </div>
@@ -99,7 +110,7 @@ function Page() {
           </nav>
 
           <footer role="contentinfo">
-            <p className="mt-8 text-sm text-gray-400">
+            <p className="mt-8 text-sm text-white">
               You’ve reached the end of this practice page. If you got here
               using the rotor or menu, well done!
             </p>

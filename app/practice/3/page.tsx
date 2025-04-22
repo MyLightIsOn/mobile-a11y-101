@@ -17,10 +17,19 @@ const Page = () => {
   };
 
   return (
-    <div className="p-4">
+    <div
+      className="p-4 min-h-screen"
+      style={{
+        backgroundImage: "url('/playground.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <h1 className="text-center mb-10">Lesson 3: Activating Elements</h1>
 
-      <div className="text-left bg-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
+      <div className="text-left bg-black/50 text-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
           Screen readers allow you to interact with buttons, links, and form
           fields by double-tapping or using specific gestures.
@@ -33,7 +42,7 @@ const Page = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <p className={"italic"}>
+          <p className={"italic text-white"}>
             How To Activate Interactive Elements on a Mobile Screen Reader
           </p>
         </div>

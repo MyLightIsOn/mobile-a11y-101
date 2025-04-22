@@ -2,10 +2,19 @@ import React from "react";
 
 function Page() {
   return (
-    <div className="p-4">
+    <div
+      className="p-4 min-h-screen"
+      style={{
+        backgroundImage: "url('/playground.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <h1 className={"text-center mb-10"}>Lesson 1: Swiping</h1>
 
-      <div className="text-left bg-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
+      <div className="text-left bg-black/50 text-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
           Swiping right with one finger will move forward through items on the
           screen. Swiping left moves backward. This is how you explore the page
@@ -19,7 +28,9 @@ function Page() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <p className={"italic"}>How To Swipe on a Mobile Phone Video</p>
+          <p className={"italic text-white"}>
+            How To Swipe on a Mobile Phone Video
+          </p>
         </div>
         Turn on your screen reader now and practice swiping left and right on
         the text below. Notice how its reading paragraph by paragraph.
