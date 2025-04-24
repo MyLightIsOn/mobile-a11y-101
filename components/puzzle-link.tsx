@@ -34,7 +34,7 @@ function PuzzleLink({ number }: { number: number }) {
           className={"absolute w-full h-full flex justify-center items-center"}
         >
           <img
-            className={"w-3/4 relative z-10"}
+            className={"w-3/4 max-w-32 relative z-10"}
             src={"/trophy.webp"}
             alt={`You have completed puzzle ${number + 1}`}
           />

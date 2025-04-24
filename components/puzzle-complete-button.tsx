@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, ReactNode } from "react";
+import React, { MouseEventHandler, ReactElement, ReactNode } from "react";
 import {
   Dialog,
   DialogContent,
@@ -12,31 +12,31 @@ interface DialogContentProps {
     puzzleNumber: number;
     description: ReactNode;
   };
-  onClick: MouseEventHandler<HTMLButtonElement>;
   puzzleSolved: boolean;
+  buttonText: string;
+  children: ReactNode;
 }
 
-function GhostHelper({
+function PuzzleComplete({
   dialogContent,
-  onClick,
   puzzleSolved,
+  buttonText,
+  children,
 }: DialogContentProps) {
   return (
     <Dialog>
       {puzzleSolved && <Confetti />}
-      <DialogTrigger asChild aria-label={"Get Hint"}>
-        <button onClick={onClick} className={"puzzle-complete"}>
-          Puzzle Complete
-        </button>
+      <DialogTrigger asChild aria-label={buttonText}>
+        {children}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] bg-transparent text-white border-0 [&>button]:hidden">
         <DialogTitle className={"henny-penny-regular !text-2xl text-center"}>
-          SUCCESS!!!
+          SUCCESS!
         </DialogTitle>
         <div className={"text-center bg-white text-black rounded-sm p-6"}>
           <p className={"font-bold"}>
             Good job! <br />
-            You have solved puzzle {dialogContent.puzzleNumber}!
+            You have solved puzzle #{dialogContent.puzzleNumber}!
           </p>
           {dialogContent.description}
           <a href={"/start"}>Ok</a>
@@ -46,4 +46,4 @@ function GhostHelper({
   );
 }
 
-export default GhostHelper;
+export default PuzzleComplete;
