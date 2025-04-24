@@ -28,8 +28,7 @@ function Page() {
           </p>
           <p>
             The lessons below will guide you through the core gestures and
-            navigation skills you'll need to uncover clues and solve each
-            puzzle.
+            navigation skills you'll need to uncover clues and solve puzzles.
           </p>
           <p>Start with Lesson 1, and take your time exploring each page.</p>
         </div>

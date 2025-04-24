@@ -58,7 +58,7 @@ function Page() {
         <a
           href={"/practice"}
           className={
-            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-full min-w-60   bg-black"
+            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-full min-w-60 uppercase"
           }
         >
           Practice
@@ -66,7 +66,7 @@ function Page() {
         <a
           href={"/start"}
           className={
-            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-full bg-black"
+            "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-full uppercase"
           }
         >
           Enter

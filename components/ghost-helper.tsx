@@ -19,7 +19,7 @@ interface DialogContentProps {
 function GhostHelper({ dialogContent }: DialogContentProps) {
   return (
     <Dialog>
-      <DialogTrigger asChild>
+      <DialogTrigger asChild aria-label={"Get Hint"}>
         <button className={"ghost-helper"}>
           <div className="ghost-background"></div>
           <div id="ghost-container">
