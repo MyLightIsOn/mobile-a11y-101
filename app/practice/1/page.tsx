@@ -16,10 +16,28 @@ function Page() {
 
       <div className="text-left bg-black/50 text-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
-          Swiping right with one finger will move forward through items on the
-          screen. Swiping left moves backward. This is how you explore the page
-          element by element using a screen reader.
+          Swiping is the most basic way to navigate while using a screen reader.
+          Swiping left or right will make the screen reader focus shift to the
+          next element in the content order. Usually, this will go left to
+          right, top to bottom.
         </p>
+        <p>
+          Go to the practice area at the bottom of the page and try these steps.
+        </p>
+        <ul className={"mb-8"}>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 1</span>-
+            <span>Turn on Screen Reader.</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 2</span>-
+            <span>Swipe right to move "forwards".</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 3</span>-
+            <span>Swipe left to move "backwards".</span>
+          </li>
+        </ul>
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
             className={"w-full min-h-[300px]"}
@@ -32,8 +50,6 @@ function Page() {
             How To Swipe on a Mobile Phone Video
           </p>
         </div>
-        Turn on your screen reader now and practice swiping left and right on
-        the text below. Notice how its reading paragraph by paragraph.
       </div>
 
       <div
