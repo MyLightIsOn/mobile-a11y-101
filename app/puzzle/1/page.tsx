@@ -115,7 +115,7 @@ function Page() {
           </div>
         </div>
       )}
-      <p>
+      <p className={"sr-only text-white"}>
         The air grows colder as you descend into the basement. The light
         flickers and fades, then darkness. You hear the creak of old wood and
         nothing else. You’ll need to feel your way through this one… with your
@@ -123,7 +123,7 @@ function Page() {
       </p>
       <p
         className={
-          "absolute bottom-0 right-0 opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "absolute bottom-0 right-0 opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden"
         }
       >
         You reached this because you are swiping. Instead, try to skip around by
@@ -308,35 +308,35 @@ function Page() {
       </p>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "opacity-0 absolute bottom-0 right-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
         }
       >
         You found a heading, but this is not the right one. Keep looking.
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "opacity-0 absolute bottom-0 right-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
         }
       >
         Not this one either
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "opacity-0 absolute bottom-0 right-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
         }
       >
         Nope
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "opacity-0 absolute bottom-0 right-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
         }
       >
         Getting closer
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "opacity-0 absolute bottom-0 right-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
         }
       >
         Almost
@@ -349,6 +349,7 @@ function Page() {
         }
       >
         <h3
+          className={"sr-only"}
           onClick={() => {
             setPuzzleSolved(true);
             localStorage.setItem("puzzle_1_complete", "true");
@@ -360,21 +361,21 @@ function Page() {
       </PuzzleCompleteButton>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "opacity-0 absolute bottom-0 right-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
         }
       >
         You missed it
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "opacity-0 absolute bottom-0 right-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
         }
       >
         Turn back around
       </h3>
       <h3
         className={
-          "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
+          "opacity-0 absolute bottom-0 right-0 select-none pointer-events-none w-0 h-0 overflow-hidden "
         }
       >
         You're way off
