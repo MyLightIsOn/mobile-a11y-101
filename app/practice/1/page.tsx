@@ -26,16 +26,16 @@ function Page() {
         </p>
         <ul className={"mb-8"}>
           <li className={"mb-2"}>
-            <span className={"font-bold"}>Step 1</span>-
+            <span className={"font-bold"}>Step 1</span> -{" "}
             <span>Turn on Screen Reader.</span>
           </li>
           <li className={"mb-2"}>
-            <span className={"font-bold"}>Step 2</span>-
-            <span>Swipe right to move "forwards".</span>
+            <span className={"font-bold"}>Step 2</span> -{" "}
+            <span>Swipe RIGHT to move "forwards".</span>
           </li>
           <li className={"mb-2"}>
-            <span className={"font-bold"}>Step 3</span>-
-            <span>Swipe left to move "backwards".</span>
+            <span className={"font-bold"}>Step 3</span> -{" "}
+            <span>Swipe LEFT to move "backwards".</span>
           </li>
         </ul>
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">

@@ -40,7 +40,10 @@ function Page() {
             Move element by element
           </a>
           <a className="text-center p-3 mb-8" href="/practice/2">
-            <span className={"font-bold"}>Lesson 2 - Rotor/Menu</span> <br />
+            <span className={"font-bold"}>
+              Lesson 2 - Rotor/Reading Controls
+            </span>{" "}
+            <br />
             Jump by content type
           </a>
           <a className="text-center p-3 mb-8" href="/practice/3">
