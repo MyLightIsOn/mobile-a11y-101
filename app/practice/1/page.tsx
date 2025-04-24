@@ -24,6 +24,9 @@ function Page() {
         <p>
           Go to the practice area at the bottom of the page and try these steps.
         </p>
+        <h3 className={"font-bold mt-10 mb-4 text-lg text-center"}>
+          Swiping With A Mobile Screen Reader
+        </h3>
         <ul className={"mb-8"}>
           <li className={"mb-2"}>
             <span className={"font-bold"}>Step 1</span> -{" "}
