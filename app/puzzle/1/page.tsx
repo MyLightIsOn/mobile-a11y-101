@@ -335,6 +335,14 @@ function Page() {
       >
         The passcode is "246"
       </h3>
+      <button
+        tabIndex={-1}
+        onClick={() => {
+          localStorage.setItem("puzzle_1_complete", "true");
+        }}
+      >
+        Puzzle Complete
+      </button>
       <h3
         className={
           "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
