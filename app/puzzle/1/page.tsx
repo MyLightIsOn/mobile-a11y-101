@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
+import PuzzleCompleteButton from "@/components/puzzle-complete-button";
 import "@/app/eyes.css";
 
 const dialogContent = {
@@ -15,7 +16,18 @@ const dialogContent = {
   ),
 };
 
+const puzzleSolvedContent = {
+  puzzleNumber: 1,
+  description: (
+    <p className={"text-left"}>
+      Navigating with headings is something we all do, whether using a screen
+      reader or not. Now you know how to use this powerful feature.
+    </p>
+  ),
+};
+
 function Page() {
+  const [puzzleSolved, setPuzzleSolved] = useState(false);
   const [divsVisibility, setDivsVisibility] = useState([
     false,
     false,
@@ -53,6 +65,7 @@ function Page() {
         backgroundSize: "cover",
       }}
     >
+      {/*{puzzleSolved && <Confetti />}*/}
       <div
         className={
           "absolute bg-black top-0 left-0 opacity-60 w-screen h-screen"
@@ -335,14 +348,14 @@ function Page() {
       >
         The passcode is "246"
       </h3>
-      <button
-        tabIndex={-1}
+      <PuzzleCompleteButton
+        dialogContent={puzzleSolvedContent}
+        puzzleSolved={puzzleSolved}
         onClick={() => {
+          setPuzzleSolved(true);
           localStorage.setItem("puzzle_1_complete", "true");
         }}
-      >
-        Puzzle Complete
-      </button>
+      />
       <h3
         className={
           "opacity-0 select-none pointer-events-none w-0 h-0 overflow-hidden sr-only"
