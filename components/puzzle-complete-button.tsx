@@ -14,6 +14,7 @@ interface DialogContentProps {
   };
   puzzleSolved: boolean;
   buttonText: string;
+  delay?: boolean;
   children: ReactNode;
 }
 
@@ -21,14 +22,18 @@ function PuzzleComplete({
   dialogContent,
   puzzleSolved,
   buttonText,
+  delay,
   children,
 }: DialogContentProps) {
   return (
     <Dialog>
       {puzzleSolved && <Confetti />}
-      <DialogTrigger asChild aria-label={buttonText}>
-        {children}
-      </DialogTrigger>
+      {!delay && (
+        <DialogTrigger asChild aria-label={buttonText}>
+          {children}
+        </DialogTrigger>
+      )}
+      {delay && children}
       <DialogContent className="sm:max-w-[425px] bg-transparent text-white border-0 [&>button]:hidden">
         <DialogTitle className={"henny-penny-regular !text-2xl text-center"}>
           SUCCESS!

@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
+import PuzzleCompleteButton from "@/components/puzzle-complete-button";
 
 const dialogContent = {
   title: "Hint",
@@ -15,7 +16,21 @@ const dialogContent = {
   ),
 };
 
+const puzzleSolvedContent = {
+  puzzleNumber: 3,
+  description: (
+    <p className={"text-left"}>
+      Alternative text is what is the description of an image that is read to a
+      screen reader. When we use images, it is essential to give them good
+      alternative text.
+    </p>
+  ),
+};
+
 const Puzzle3 = () => {
+  const [fixedPainting, setFixedPainting] = useState<any[]>([]);
+  const [puzzleSolved, setPuzzleSolved] = useState(false);
+
   return (
     <div className="bg-black text-white min-h-screen w-screen text-center p-4 pb-30">
       <h1 className="text-2xl font-bold pb-2">
@@ -35,22 +50,61 @@ const Puzzle3 = () => {
         <img
           src="/husband.webp"
           alt="A faded portrait of a stern-looking husband. On the back of the painting it says: 'Taxes were the real horror.'"
-          className="w-full h-auto"
+          className={`w-full h-auto ${fixedPainting.includes("dad") ? "" : "rotate-8 relative left-2"}`}
+          onClick={() => {
+            setFixedPainting((prevFixedPainting) => [
+              ...prevFixedPainting,
+              "dad",
+            ]);
+          }}
         />
         <img
           src="/wife.webp"
           alt="An elegant woman in a dark gown. On the back: 'Don't forget to water the plants.'"
-          className="w-full h-auto"
+          className={`w-full h-auto ${fixedPainting.includes("mom") ? "" : "-rotate-4 relative right-4"}`}
+          onClick={() => {
+            setFixedPainting((prevFixedPainting) => [
+              ...prevFixedPainting,
+              "mom",
+            ]);
+          }}
         />
-        <img
-          src="/daughter.webp"
-          alt="A young girl with a mischievous smile. On the back: 'The code is 145.'"
-          className="w-full h-auto"
-        />
+
+        <PuzzleCompleteButton
+          dialogContent={puzzleSolvedContent}
+          puzzleSolved={puzzleSolved}
+          delay={fixedPainting.length !== 3}
+          buttonText={
+            "A young girl with a mischievous smile. On the back: 'Our portraits are a mess. Double tap on each of to fix them. Then fix mine last."
+          }
+        >
+          <img
+            src="/daughter.webp"
+            alt="A young girl with a mischievous smile. On the back: 'Our portraits are a mess. Double tap on each of to fix them. Then fix mine last."
+            className={`w-full h-auto ${fixedPainting.includes("kid") ? "" : "-rotate-4"}`}
+            onClick={() => {
+              if (fixedPainting.length === 3) {
+                setFixedPainting((prevFixedPainting) => [
+                  ...prevFixedPainting,
+                  "kid",
+                ]);
+                setPuzzleSolved(true);
+                localStorage.setItem("puzzle_3_complete", "true");
+              }
+            }}
+          />
+        </PuzzleCompleteButton>
+
         <img
           src="/dog.webp"
           alt="A shaggy, but happy dog. On the back: 'Woof! Woof!'"
-          className="w-full h-auto"
+          className={`w-full h-auto ${fixedPainting.includes("dog") ? "" : "rotate-6 relative -left-2"}`}
+          onClick={() => {
+            setFixedPainting((prevFixedPainting) => [
+              ...prevFixedPainting,
+              "dog",
+            ]);
+          }}
         />
       </div>
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />

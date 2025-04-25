@@ -65,7 +65,7 @@ const Page = () => {
 
     const buttons = texts.map((text) => ({
       visible: text,
-      aria: "Do Click press",
+      aria: "Do Not Click Here",
       isCorrect: false,
     }));
 
@@ -123,9 +123,7 @@ const Page = () => {
                   key={idx}
                   dialogContent={puzzleSolvedContent}
                   puzzleSolved={puzzleSolved}
-                  buttonText={
-                    "This is the right button! Double tap this button to continue."
-                  }
+                  buttonText={"Click Here!"}
                 >
                   <button
                     className="mystery-button mb-5 h-[80px]"
