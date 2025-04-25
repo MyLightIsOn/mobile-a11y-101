@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "@/app/mystery-button.css";
 import PuzzleFooter from "@/components/puzzle-footer";
+import PuzzleCompleteButton from "@/components/puzzle-complete-button";
 
 const dialogContent = {
   title: "Hint",
@@ -15,6 +16,16 @@ const dialogContent = {
   ),
 };
 
+const puzzleSolvedContent = {
+  puzzleNumber: 1,
+  description: (
+    <p className={"text-left"}>
+      Button text is important. Having phrases like click here are ambiguous and
+      unhelpful. Good text is a foundation of a good experience.
+    </p>
+  ),
+};
+
 interface Button {
   visible: string;
   aria: string;
@@ -25,6 +36,7 @@ const Page = () => {
   const [buttons, setButtons] = useState([
     { visible: "", aria: "", isCorrect: false },
   ]);
+  const [puzzleSolved, setPuzzleSolved] = useState(false);
 
   function shuffle(array: Array<Button>) {
     // Fisher-Yates shuffle
@@ -37,15 +49,15 @@ const Page = () => {
 
   function generateButtons() {
     const texts = [
-      "Don't Press",
-      "Definitely Not",
-      "Press Here?",
-      "Still Not This",
-      "Nope",
-      "Try Again",
-      "Incorrect",
-      "Almost",
-      "Whoops",
+      "Click Here",
+      "Click Here",
+      "Click Here",
+      "Click Here",
+      "Click Here",
+      "Click Here",
+      "Click Here",
+      "Click Here",
+      "Click Here",
     ];
 
     // Choose a random index that is NOT 0
@@ -53,7 +65,7 @@ const Page = () => {
 
     const buttons = texts.map((text) => ({
       visible: text,
-      aria: "Do not press",
+      aria: "Do Click press",
       isCorrect: false,
     }));
 
@@ -70,7 +82,8 @@ const Page = () => {
 
   function handleClick(isCorrect: boolean) {
     if (isCorrect) {
-      alert("🎉 Correct! The passcode is '412'");
+      setPuzzleSolved(true);
+      localStorage.setItem("puzzle_2_complete", "true");
     } else {
       const newButtons: Array<Button> = generateButtons();
       setButtons(newButtons);
@@ -92,9 +105,7 @@ const Page = () => {
       }}
     >
       <h1 className="text-2xl font-bold pb-2">Puzzle 2:</h1>
-      <h2 className="text-xl pb-20 text-white font-bold">
-        The Forbidden Button
-      </h2>
+      <h2 className="text-xl pb-20 text-white font-bold">Don't Click Here</h2>
 
       <p className={"sr-only"}>
         You enter the living room. The fireplace has long gone cold, but
@@ -105,23 +116,53 @@ const Page = () => {
 
       <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
         {buttons?.length > 2 &&
-          buttons.map((btn, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                handleClick(btn.isCorrect);
-              }}
-              aria-label={btn.aria}
-              className="mystery-button mb-5 h-[80px]"
-              style={{
-                borderRadius: "12px",
-                padding: "4px",
-                fontSize: "14px",
-              }}
-            >
-              {btn.visible}
-            </button>
-          ))}
+          buttons.map((btn, idx) => {
+            if (btn.isCorrect) {
+              return (
+                <PuzzleCompleteButton
+                  key={idx}
+                  dialogContent={puzzleSolvedContent}
+                  puzzleSolved={puzzleSolved}
+                  buttonText={
+                    "This is the right button! Double tap this button to continue."
+                  }
+                >
+                  <button
+                    className="mystery-button mb-5 h-[80px]"
+                    style={{
+                      borderRadius: "12px",
+                      padding: "4px",
+                      fontSize: "14px",
+                    }}
+                    onClick={() => {
+                      setPuzzleSolved(true);
+                      localStorage.setItem("puzzle_2_complete", "true");
+                    }}
+                  >
+                    {btn.visible}
+                  </button>
+                </PuzzleCompleteButton>
+              );
+            } else {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    handleClick(btn.isCorrect);
+                  }}
+                  aria-label={btn.aria}
+                  className="mystery-button mb-5 h-[80px]"
+                  style={{
+                    borderRadius: "12px",
+                    padding: "4px",
+                    fontSize: "14px",
+                  }}
+                >
+                  {btn.visible}
+                </button>
+              );
+            }
+          })}
       </div>
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
