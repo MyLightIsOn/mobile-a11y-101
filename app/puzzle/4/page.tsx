@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import "@/app/mystery-button.css";
 import PuzzleFooter from "@/components/puzzle-footer";
+import PuzzleCompleteButton from "@/components/puzzle-complete-button";
 import { Trash2Icon, DeleteIcon } from "lucide-react";
 
 const dialogContent = {
@@ -17,13 +18,25 @@ const dialogContent = {
   ),
 };
 
+const puzzleSolvedContent = {
+  puzzleNumber: 4,
+  description: (
+    <p className={"text-left"}>
+      That was tough! Tables are very common on the internet, so learning how to
+      visualize and navigate them is an essential skill for a screen reader
+      user.
+    </p>
+  ),
+};
+
 const Page = () => {
   const [inputValue, setInputValue] = useState("");
   const [isLockedOut, setIsLockedOut] = useState(false);
   const [timer, setTimer] = useState(10);
+  const [puzzleSolved, setPuzzleSolved] = useState(false);
 
   const handleClick = (digit: string) => {
-    if (inputValue.length < 3) {
+    if (inputValue.length < 4) {
       setInputValue((prev) => prev + digit);
     }
   };
@@ -32,8 +45,8 @@ const Page = () => {
   const handleDelete = () => setInputValue(inputValue.slice(0, -1));
 
   const handleSubmit = () => {
-    if (inputValue === "131") {
-      alert("🎉 Correct! Remember, the passcode is '131'");
+    if (inputValue === "A11Y") {
+      alert("🎉 Correct! Remember, the passcode is 'A11Y'");
     } else {
       setIsLockedOut(true);
       setTimer(10);
@@ -67,7 +80,7 @@ const Page = () => {
 
   const getMaskedInput = () => {
     return inputValue
-      .padEnd(3, "-")
+      .padEnd(4, "-")
       .split("")
       .map((char, i) => (
         <span key={i} className="inline-block w-4 text-center">
@@ -78,7 +91,7 @@ const Page = () => {
 
   return (
     <div
-      className="bg-black h-screen w-screen overflow-hidden text-white text-center p-4"
+      className="bg-black w-screen overflow-hidden text-white text-center p-4"
       style={{
         backgroundImage: "url('/dining.webp')",
         backgroundPosition: "center center",
@@ -95,46 +108,68 @@ const Page = () => {
       </p>
 
       <table
-        className="absolute -top-[200%] table w-[100px]"
-        title="The Table of Secrets"
+        title="Table of Secrets"
+        className={"sr-only relative left-[-900%] opacity-0 -z-50"}
       >
         <thead>
           <tr>
-            <th scope="col">Table Area</th>
-            <th scope="col">Contents</th>
-            <th scope="col">Search Results</th>
+            <th scope="col">Left Side</th>
+            <th scope="col">Middle</th>
+            <th scope="col">Right Side</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Right Drawer</td>
-            <td>Empty</td>
-            <td>Just dust</td>
+            <td>
+              On the left side of the desktop, it is just dusty and scratched.
+              Nothing important.
+            </td>
+            <td>
+              In the middle of the desktop, you see old dried out pens and some
+              blank sheets of paper.
+            </td>
+            <td>On the right of the desktop, there is an old used candle</td>
           </tr>
           <tr>
-            <td>Left Drawer</td>
-            <td>Faded Photos</td>
-            <td>Nothing on the back</td>
+            <td>
+              In the left, top drawer you find more dust and spiders! Yikes!
+            </td>
+            <td>
+              In the middle top drawer, there is an old sheet of paper with
+              writing on it. It says “A11y”.
+            </td>
+            <td>The right top drawer is missing</td>
           </tr>
           <tr>
-            <td>Underneath</td>
-            <td>Secret Compartment</td>
-            <td>A piece of paper with the number 131 written on it</td>
-          </tr>
-          <tr>
-            <td>Tabletop</td>
-            <td>A cracked mirror</td>
-            <td>Your reflection looks... different</td>
+            <td>
+              In the left bottom drawer, the bottom has fallen out. Whatever was
+              here is long gone.
+            </td>
+            <td>In the middle bottom drawer, you find dust again.</td>
+            <td>
+              <span
+                onClick={() => {
+                  alert(
+                    "🔑 You picked up the secret key! Maybe it will come in handy later.",
+                  );
+                  localStorage.setItem("secret_key", "true");
+                }}
+              >
+                In the right bottom drawer, you find a key! You solved this
+                puzzle. I wonder what it unlocks. Maybe you will find out later.
+                Double tap this table cell to pick up the key.
+              </span>
+            </td>
           </tr>
         </tbody>
       </table>
 
-      <div className="mt-6">
+      <div className="-mt-15">
         <div className="mb-4 text-xl relative z-10">
           Passcode: {getMaskedInput()}
         </div>
         <div className="grid grid-cols-3 gap-4 max-w-xs mx-auto mb-4">
-          {[1, 2, 3, 4, 5, 6].map((num) => (
+          {["A", "B", "C", "X", "Y", "Z", 1, 2, 3].map((num) => (
             <button
               key={num}
               onClick={() => handleClick(num.toString())}
@@ -165,14 +200,29 @@ const Page = () => {
             <Trash2Icon className={"mx-auto"} />
           </button>
         </div>
-        <button
-          aria-label={inputValue && "Enter passcode:" + inputValue}
-          onClick={handleSubmit}
-          className="mystery-button p-2! w-[85%] h-[55px] mx-auto mt-8 rounded-md!"
+        <PuzzleCompleteButton
+          dialogContent={puzzleSolvedContent}
+          puzzleSolved={puzzleSolved}
+          buttonText={"Submit"}
+          delay={inputValue !== "A11Y"}
         >
-          Submit
-        </button>
+          <button
+            aria-label={inputValue && "Enter passcode:" + inputValue}
+            onClick={() => {
+              if (inputValue !== "A11Y") {
+                handleSubmit();
+              } else {
+                setPuzzleSolved(true);
+                localStorage.setItem("puzzle_4_complete", "true");
+              }
+            }}
+            className="mystery-button p-2! w-[85%] h-[55px] mx-auto mt-8 rounded-md! max-w-[280px]"
+          >
+            Submit
+          </button>
+        </PuzzleCompleteButton>
       </div>
+
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
