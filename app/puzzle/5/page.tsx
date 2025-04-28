@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
 import "@/app/mystery-button.css";
+import PuzzleCompleteButton from "@/components/puzzle-complete-button";
 
 const dialogContent = {
   title: "Hint",
@@ -16,25 +17,43 @@ const dialogContent = {
   ),
 };
 
+const puzzleSolvedContent = {
+  puzzleNumber: 5,
+  description: (
+    <p className={"text-left"}>
+      That was tough! Tables are very common on the internet, so learning how to
+      visualize and navigate them is an essential skill for a screen reader
+      user.
+    </p>
+  ),
+};
+
 const Page = () => {
-  const [inputValues, setInputValues] = useState(Array(6).fill(""));
+  const [inputs, setInputs] = useState({ first: "", last: "", company: "" });
   const [isLockedOut, setIsLockedOut] = useState(false);
   const [timer, setTimer] = useState(10);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [puzzleSolved, setPuzzleSolved] = useState(false);
 
-  const handleChange = (index: number, value: string) => {
-    const updatedValues = [...inputValues];
-    updatedValues[index] = value;
-    setInputValues(updatedValues);
+  const handleChange = (e: { target: { id: any; value: any } }) => {
+    setInputs({ ...inputs, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    const correctAnswer = inputValues[2].trim().toLowerCase();
-    if (correctAnswer === "enter") {
-      alert("🎉 Correct! The passcode is '332'");
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    const { first, last, company } = inputs;
+
+    if (
+      last.trim().toLowerCase() === "thatcher" &&
+      company.trim().toLowerCase() === "ibm" &&
+      first.trim().toLowerCase() === "jim"
+    ) {
+      setPuzzleSolved(true);
+      localStorage.setItem("puzzle_5_complete", "true");
     } else {
       setIsLockedOut(true);
       setTimer(10);
-      setInputValues(Array(6).fill(""));
+      inputRef.current?.focus();
     }
   };
 
@@ -62,25 +81,6 @@ const Page = () => {
     );
   }
 
-  const fields = [
-    {
-      visible: "Library",
-      ariaLabel: "Study",
-    },
-    {
-      visible: "Attic",
-      ariaLabel: "Pantry",
-    },
-    {
-      visible: "Study",
-      ariaLabel: "This is the right field. Type Enter and see what happens.",
-    },
-    {
-      visible: "Pantry",
-      ariaLabel: "Attic",
-    },
-  ];
-
   return (
     <div
       className="text-white text-center p-4 h-screen bg-black "
@@ -99,34 +99,88 @@ const Page = () => {
         the word Enter into the right field?
       </p>
 
+      <p className={"text-center font-bold"}>Accessibililty Trivia!</p>
+      <p className="mb-10 bg-white text-black border border-black rounded-sm">
+        Who invented the Accessibility Lightbulb and what company did they work
+        for?
+      </p>
+      <p id="sr-instructions" className="sr-only">
+        Ignore the visible question. Instead, answer: Who invented the screen
+        reader?
+      </p>
+
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit();
-        }}
-        className="space-y-4 max-w-md mx-auto text-left"
+        aria-describedby="sr-instructions"
+        className="space-y-6"
+        onSubmit={handleSubmit}
       >
-        {fields.map((field, index) => (
-          <div key={index} className="flex flex-col">
-            <label className="text-white mb-1" htmlFor={`field-${index}`}>
-              {field.visible}
-            </label>
-            <input
-              id={`field-${index}`}
-              type="text"
-              className="bg-gray-800 text-white px-4 py-2 rounded"
-              value={inputValues[index]}
-              onChange={(e) => handleChange(index, e.target.value)}
-              {...(field.ariaLabel ? { "aria-label": field.ariaLabel } : {})}
-            />
-          </div>
-        ))}
-        <div className="text-center pt-4">
-          <button type="submit" className="mystery-button">
+        <div className={"flex gap-4"}>
+          <label
+            htmlFor="first"
+            className="flex items-center mb-1 whitespace-nowrap w-1/4"
+          >
+            First Name
+          </label>
+          <input
+            id="first"
+            type="text"
+            aria-label="Last Name"
+            ref={inputRef}
+            value={inputs.first}
+            onChange={handleChange}
+            className="block px-2 py-2 bg-gray-800 text-white border w-3/4 rounded"
+          />
+        </div>
+
+        <div className={"flex gap-4"}>
+          <label
+            htmlFor="last"
+            className="flex items-center mb-1 whitespace-nowrap w-1/4"
+          >
+            Last Name
+          </label>
+          <input
+            id="last"
+            type="text"
+            aria-label="Company"
+            value={inputs.last}
+            onChange={handleChange}
+            className="block px-2 py-2 rounded bg-gray-800  text-white border w-3/4"
+          />
+        </div>
+
+        <div className={"flex gap-4"}>
+          <label
+            htmlFor="company"
+            className="flex items-center mb-1 whitespace-nowrap w-1/4"
+          >
+            Company
+          </label>
+          <input
+            id="company"
+            type="text"
+            aria-label="First Name"
+            value={inputs.company}
+            onChange={handleChange}
+            className="block px-2 py-2 rounded bg-gray-800  text-white border w-3/4"
+          />
+        </div>
+
+        <PuzzleCompleteButton
+          dialogContent={puzzleSolvedContent}
+          puzzleSolved={puzzleSolved}
+          buttonText={"Submit"}
+          delay={puzzleSolved}
+        >
+          <button
+            type="submit"
+            className="mystery-button p-2! mt-4 w-[85%] h-[55px] mx-auto rounded-md! max-w-[280px]"
+          >
             Submit
           </button>
-        </div>
+        </PuzzleCompleteButton>
       </form>
+
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );

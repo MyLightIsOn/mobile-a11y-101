@@ -17,7 +17,7 @@ const dialogContent = {
 };
 
 const puzzleSolvedContent = {
-  puzzleNumber: 1,
+  puzzleNumber: 2,
   description: (
     <p className={"text-left"}>
       Button text is important. Having phrases like click here are ambiguous and
