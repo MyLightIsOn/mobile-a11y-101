@@ -1,21 +1,6 @@
-"use client";
-import React, { useRef } from "react";
+import React from "react";
 
-const Page = () => {
-  const activeElementRef = useRef<HTMLElement | null>(null);
-
-  const showAlert = (message: string) => {
-    // Store the currently focused element
-    activeElementRef.current = document.activeElement as HTMLElement;
-
-    alert(message);
-
-    // Return focus to the element that was active before the alert
-    if (activeElementRef.current) {
-      activeElementRef.current.focus();
-    }
-  };
-
+function Page() {
   return (
     <div
       className="p-4 min-h-screen"
@@ -27,19 +12,23 @@ const Page = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      <h1 className="text-center mb-10">Lesson 3: Activating Elements</h1>
+      <h1 className="text-center mb-10">Lesson 3: Rotor / Reading Controls</h1>
 
       <div className="text-left bg-black/50 text-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
-          Screen readers allow you to interact with buttons, links, and form
-          fields. This is also a basic form of navigation with a screen reader.
+          The Rotor (on iOS) or Reading Controls (on Android) helps you jump
+          through content by type, like headings, links, lists, and more.
+          Instead of swiping through all the content on a apage, this is a more
+          efficient way to browse.
         </p>
-        <p className="mb-4">
-          There are some buttons and things in the practice area at the bottom
-          of this page. Go give them try.
+        <p>
+          Below are instructions for iOS and Android. Turn on your screen reader
+          and use the rotor or reading controls to browse this page by content
+          type. Try jumping to each heading, then the list, and then explore the
+          different sections.
         </p>
         <h3 className={"font-bold mt-10 mb-4 text-lg text-center"}>
-          Activating Elements On A Mobile Screen Reader
+          Using the Rotor on iOS
         </h3>
         <ul className={"mb-8"}>
           <li className={"mb-2"}>
@@ -48,142 +37,141 @@ const Page = () => {
           </li>
           <li className={"mb-2"}>
             <span className={"font-bold"}>Step 2</span> -{" "}
-            <span>
-              Swipe until you reach an interactive element or tap on a
-              interactive element once to jump the focus to that button.
-            </span>
+            <span>Twist two fingers in a circle to select a content type.</span>
           </li>
           <li className={"mb-2"}>
             <span className={"font-bold"}>Step 3</span> -{" "}
-            <span>Double Tap to activate the interactive element</span>
+            <span>Swipe DOWN to move "forwards".</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 4</span> -{" "}
+            <span>Swipe UP to move "backwards".</span>
           </li>
         </ul>
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
             className={"w-full min-h-[300px]"}
-            src="https://www.youtube.com/embed/6OU0BCemuIE"
+            src="https://www.youtube.com/embed/H6usoQxszi8"
             title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
           <p className={"italic text-white"}>
-            How To Activate Interactive Elements on a Mobile Screen Reader
+            How To Use The Rotor On An iPhone Video
+          </p>
+        </div>
+        <h3 className={"font-bold mt-15 mb-4 text-lg text-center"}>
+          Using the Reader Controls on Android
+        </h3>
+        <ul className={"mb-8"}>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 1</span> -{" "}
+            <span>Turn on Screen Reader.</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 2</span> -{" "}
+            <span>Swipe down with three fingers to select a content type.</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 3</span> -{" "}
+            <span>Swipe DOWN to move "forwards".</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 4</span> -{" "}
+            <span>Swipe UP to move "backwards".</span>
+          </li>
+        </ul>
+        <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
+          <iframe
+            className={"w-full min-h-[300px]"}
+            src="https://www.youtube.com/embed/O-U7u6POygQ"
+            title=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+          <p className={"italic text-white"}>
+            How To Use Reading Controls On An Andorid Phone
           </p>
         </div>
       </div>
+      <div
+        className={
+          "text-white p-4 pt-10 practice-section max-w-[500px] mx-auto"
+        }
+      >
+        <main className="text-white pt-10 practice-section" role="main">
+          <section aria-label="Intro Section">
+            <h2>Welcome to the Rotor / Reading Control Practice</h2>
+            <p>
+              You are learning to move through pages more efficiently by jumping
+              between types of content.
+            </p>
+          </section>
 
-      <div className="text-white p-4 pt-10 max-w-[500px] mx-auto space-y-6">
-        <section aria-label="Button Section">
-          <h2 className="text-lg font-bold mb-2">Try Pressing This Button</h2>
-          <button
-            onClick={() =>
-              showAlert(
-                "This is a button. While some buttons look like links and links look like buttons, they are not the same. Generally, buttons will change something on the page—a link opens a new page. For screen reader users, this distinction is important because it tells them what should happen when they press that button.",
-              )
-            }
-            className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded"
-          >
-            Tap Me
-          </button>
-        </section>
+          <section aria-label="Clue Types">
+            <h2>Common Things to Look For</h2>
+            <ul className="list-disc list-inside">
+              <li>Headings – great for structure</li>
+              <li>Links – used for navigation</li>
+              <li>Form Fields – inputs, buttons, toggles</li>
+              <li>Tables – to compare data or info</li>
+            </ul>
+          </section>
 
-        <section aria-label="Link Section">
-          <h2 className="text-lg font-bold mb-2 mt-10">
-            Find and Follow This Link
-          </h2>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              showAlert(
-                "This is a link. Links are used to move to other pages or sections. Screen readers announce them as links, and users expect navigation—not in-page actions.",
-              );
-            }}
-            className="underline text-blue-300"
-          >
-            Mysterious Link
-          </a>
-        </section>
+          <section aria-label="Navigation Tip">
+            <h2>Navigation Tips</h2>
+            <p>
+              In the real puzzles, you might want to jump directly to headings
+              to get a sense of the page layout before swiping
+              element-by-element.
+            </p>
+            <p>
+              If you're on iOS, twist two fingers on the screen like you're
+              turning a dial to open the rotor.
+            </p>
+            <p>
+              On Android, swipe up or down with three fingers to cycle between
+              navigation modes.
+            </p>
+          </section>
 
-        <section aria-label="Dropdown Section">
-          <h2 className="text-lg font-bold mb-2 mt-10">Try a Dropdown</h2>
-          <label htmlFor="locationSelect">Choose a spooky location:</label>
-          <select
-            id="locationSelect"
-            className="block bg-black text-white border mt-2 px-2 py-1"
-            onChange={() =>
-              showAlert(
-                "This is a dropdown (select menu). It lets screen reader users choose one item from a list.",
-              )
-            }
-          >
-            <option>Attic</option>
-            <option>Cellar</option>
-            <option>Foyer</option>
-            <option>Secret Passage</option>
-          </select>
-        </section>
+          <nav aria-label="Helpful Links">
+            <h2>Useful Links</h2>
+            <ul className="list-disc list-inside">
+              <li>
+                <a href="#" className="underline text-blue-300">
+                  Link Example 1
+                </a>
+              </li>
+              <li>
+                <a href="#" className="underline text-blue-300">
+                  Link Example 2
+                </a>
+              </li>
+              <li>
+                <a href="#" className="underline text-blue-300">
+                  Link Example 3
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-        <section aria-label="Radio Buttons">
-          <h2 className="text-lg font-bold mb-2 mt-10">Choose One</h2>
-          <fieldset>
-            <legend>Pick your favorite haunted object:</legend>
-            <label>
-              <input
-                type="radio"
-                name="object"
-                value="mirror"
-                className="mr-2"
-                onClick={() =>
-                  showAlert(
-                    "These are radio buttons. Screen reader users can use them to choose one option from a group.",
-                  )
-                }
-              />
-              Haunted Mirror
-            </label>
-            <br />
-            <label>
-              <input
-                type="radio"
-                name="object"
-                value="doll"
-                className="mr-2"
-                onClick={() =>
-                  showAlert(
-                    "These are radio buttons. Screen reader users can use them to choose one option from a group.",
-                  )
-                }
-              />
-              Cursed Doll
-            </label>
-          </fieldset>
-        </section>
-
-        <section aria-label="Checkbox Practice">
-          <h2 className="text-lg font-bold mb-2 mt-10">Check This Box</h2>
-          <label>
-            <input
-              type="checkbox"
-              className="mr-2"
-              onClick={() =>
-                showAlert(
-                  "This is a checkbox. Screen reader users can toggle this on or off. They’re often used for agreeing to terms or selecting multiple options.",
-                )
-              }
-            />
-            I agree not to awaken any spirits
-          </label>
-        </section>
+          <footer role="contentinfo">
+            <p className="mt-8 text-sm text-white">
+              You’ve reached the end of this practice page. If you got here
+              using the rotor or menu, well done!
+            </p>
+          </footer>
+        </main>
       </div>
 
-      <div className="flex flex-col pt-10">
+      <div className="flex flex-col pt-10 max-w-[500px] mx-auto">
         <a className="bg-white text-center p-3 mb-8" href="/practice/">
           Back
         </a>
       </div>
     </div>
   );
-};
+}
 
 export default Page;

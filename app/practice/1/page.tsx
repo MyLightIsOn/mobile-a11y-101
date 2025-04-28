@@ -12,72 +12,100 @@ function Page() {
         backgroundAttachment: "fixed",
       }}
     >
-      <h1 className={"text-center mb-10"}>Lesson 1: Swiping</h1>
+      <h1 className="text-center mb-10">Lesson 1: Screen Reader Setup</h1>
 
       <div className="text-left bg-black/50 text-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
-          Swiping is the most basic way to navigate while using a screen reader.
-          Swiping left or right will make the screen reader focus shift to the
-          next element in the content order. Usually, this will go left to
-          right, top to bottom.
+          If you have an Android or iOS device, it comes with a screen reader
+          built in. Android's screen reader is called TalkBack, while the iOS
+          screen reader is called VoiceOver.
         </p>
         <p>
-          Go to the practice area at the bottom of the page and try these steps.
+          Below are instructions setting them up. It is super easy. This basic
+          setup is enough to play this game.{" "}
         </p>
         <h3 className={"font-bold mt-10 mb-4 text-lg text-center"}>
-          Swiping With A Mobile Screen Reader
+          Setting up VoiceOver
         </h3>
         <ul className={"mb-8"}>
           <li className={"mb-2"}>
             <span className={"font-bold"}>Step 1</span> -{" "}
-            <span>Turn on Screen Reader.</span>
+            <span>Open settings.</span>
           </li>
           <li className={"mb-2"}>
             <span className={"font-bold"}>Step 2</span> -{" "}
-            <span>Swipe RIGHT to move "forwards".</span>
+            <span>Go to Accessibility.</span>
           </li>
           <li className={"mb-2"}>
             <span className={"font-bold"}>Step 3</span> -{" "}
-            <span>Swipe LEFT to move "backwards".</span>
+            <span>Go to Accessibility Shortcuts.</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 4</span> -{" "}
+            <span>Tap/Activate VoiceOver.</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 5</span> -{" "}
+            <span>
+              Practice turning the screen on and off by pressing the lock button
+              3 quickly times.
+            </span>
           </li>
         </ul>
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
             className={"w-full min-h-[300px]"}
-            src="https://www.youtube.com/embed/H6usoQxszi8"
+            src="https://www.youtube.com/embed/MAOKN2oyk9I"
             title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
           <p className={"italic text-white"}>
-            How To Swipe on a Mobile Phone Video
+            How To Setup VoiceOver on an iPhone
+          </p>
+        </div>
+        <h3 className={"font-bold mt-15 mb-4 text-lg text-center"}>
+          Setting up TalkBack
+        </h3>
+        <ul className={"mb-8"}>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 1</span> -{" "}
+            <span>Open settings.</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 2</span> -{" "}
+            <span>Go to Accessibility.</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 3</span> -{" "}
+            <span>Go to TalkBack.</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 4</span> -{" "}
+            <span>Tap TalkBack Shortcut</span>
+          </li>
+          <li className={"mb-2"}>
+            <span className={"font-bold"}>Step 5</span> -{" "}
+            <span>
+              Practice turning the screen on and off by holding both volume
+              keys.
+            </span>
+          </li>
+        </ul>
+        <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
+          <iframe
+            className={"w-full min-h-[300px]"}
+            src="https://www.youtube.com/embed/gkdk5FWt8RQ"
+            title=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+          <p className={"italic text-white"}>
+            How To Setup TalkBack on an Android phone
           </p>
         </div>
       </div>
-
-      <div
-        className={
-          "text-white p-4 pt-10 practice-section max-w-[500px] mx-auto"
-        }
-      >
-        <p>Welcome to the Mobile Mystery House.</p>
-        <p>Each room is filled with secrets you can only find by listening.</p>
-        <p>
-          You'll explore by swiping left and right to hear everything that's
-          hidden.
-        </p>
-        <p>
-          Sometimes clues will be announced in headings, buttons, or form
-          fields.
-        </p>
-        <p>Use your screen reader and swipe carefully.</p>
-        <p>
-          If you got here, you're doing great. When you're ready, move on to the
-          next lesson.
-        </p>
-      </div>
-
-      <div className="flex flex-col pt-10  max-w-[500px] mx-auto">
+      <div className="flex flex-col pt-10 max-w-[500px] mx-auto">
         <a className="bg-white text-center p-3 mb-8" href="/practice/">
           Back
         </a>

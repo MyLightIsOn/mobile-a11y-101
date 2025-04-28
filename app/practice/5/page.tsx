@@ -1,67 +1,65 @@
+"use client";
+
+import { useState, useRef } from "react";
+
 const Page = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState("");
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleSubmit = () => {
+    if (inputValue.trim().toLowerCase() === "a11y") {
+      alert(
+        "Correct! Input fields and labels are common and critical in accessibility. During the game, if you encounter a form field, make sure to pay attention to the label (wink, wink).",
+      );
+      setError("");
+    } else {
+      setError("That's not quite right. Try again.");
+      inputRef.current?.focus();
+    }
+  };
+
   return (
     <div className="p-4">
-      <h1 className="text-center mb-10">Lesson 5: Navigating Tables</h1>
+      <h1 className="text-center mb-10">Lesson 5: Input Fields</h1>
 
       <div className="text-left bg-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
-          Tables allow screen reader users to understand data arranged in rows
-          and columns. This lesson shows a simple example for practice.
+          Input fields allow screen reader users to type in answers or provide
+          information. They must be labeled properly so the screen reader can
+          announce their purpose.
         </p>
         <div className="bg-gray-200 text-center text-black p-6 rounded mb-6">
           {/* Video placeholder */}
           <p className="italic">[Video demo coming soon]</p>
         </div>
-        Try navigating this table by row and column. Screen readers will
-        announce the row headers and column headers as you move.
+        Try typing the correct answer below and submitting it.
       </div>
 
-      <div className="text-white p-4 pt-10 max-w-[600px] mx-auto overflow-x-auto text-center">
-        <table className="w-full border border-white" role="table">
-          <thead>
-            <tr>
-              <th className="border p-2">Floor</th>
-              <th className="border p-2">
-                Room
-                <br />1
-              </th>
-              <th className="border p-2">
-                Room
-                <br />2
-              </th>
-              <th className="border p-2">
-                Room
-                <br />3
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" className="border p-2">
-                1
-              </th>
-              <td className="border p-2">Kitchen</td>
-              <td className="border p-2">Living Room</td>
-              <td className="border p-2">No more rooms on this floor</td>
-            </tr>
-            <tr>
-              <th scope="row" className="border p-2">
-                2
-              </th>
-              <td className="border p-2">Bedroom</td>
-              <td className="border p-2">Bathroom</td>
-              <td className="border p-2">Library</td>
-            </tr>
-            <tr>
-              <th scope="row" className="border p-2">
-                3
-              </th>
-              <td className="border p-2">Storage</td>
-              <td className="border p-2">No more rooms on this floor</td>
-              <td className="border p-2">No more rooms on this floor</td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="text-white p-4 pt-10 max-w-[500px] mx-auto">
+        <label htmlFor="abbreviation" className="block text-lg font-bold mb-2">
+          What is the abbreviation for accessibility? (Answer: a11y)
+        </label>
+        <input
+          id="abbreviation"
+          ref={inputRef}
+          type="text"
+          className="block w-full px-2 py-1 bg-black text-white border"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          aria-describedby="error-text"
+        />
+        {error && (
+          <p id="error-text" className="text-red-400 mt-2">
+            {error}
+          </p>
+        )}
+        <button
+          onClick={handleSubmit}
+          className="mt-4 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded"
+        >
+          Submit
+        </button>
       </div>
 
       <div className="flex flex-col pt-10">

@@ -12,23 +12,20 @@ function Page() {
         backgroundAttachment: "fixed",
       }}
     >
-      <h1 className="text-center mb-10">Lesson 2: Rotor / Reading Controls</h1>
+      <h1 className={"text-center mb-10"}>Lesson 2: Swiping</h1>
 
       <div className="text-left bg-black/50 text-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
-          The Rotor (on iOS) or Reading Controls (on Android) helps you jump
-          through content by type, like headings, links, lists, and more.
-          Instead of swiping through all the content on a apage, this is a more
-          efficient way to browse.
+          Swiping is the most basic way to navigate while using a screen reader.
+          Swiping left or right will make the screen reader focus shift to the
+          next element in the content order. Usually, this will go left to
+          right, top to bottom.
         </p>
         <p>
-          Below are instructions for iOS and Android. Turn on your screen reader
-          and use the rotor or reading controls to browse this page by content
-          type. Try jumping to each heading, then the list, and then explore the
-          different sections.
+          Go to the practice area at the bottom of the page and try these steps.
         </p>
         <h3 className={"font-bold mt-10 mb-4 text-lg text-center"}>
-          Using the Rotor on iOS
+          Swiping With A Mobile Screen Reader
         </h3>
         <ul className={"mb-8"}>
           <li className={"mb-2"}>
@@ -37,15 +34,11 @@ function Page() {
           </li>
           <li className={"mb-2"}>
             <span className={"font-bold"}>Step 2</span> -{" "}
-            <span>Twist two fingers in a circle to select a content type.</span>
+            <span>Swipe RIGHT to move "forwards".</span>
           </li>
           <li className={"mb-2"}>
             <span className={"font-bold"}>Step 3</span> -{" "}
-            <span>Swipe DOWN to move "forwards".</span>
-          </li>
-          <li className={"mb-2"}>
-            <span className={"font-bold"}>Step 4</span> -{" "}
-            <span>Swipe UP to move "backwards".</span>
+            <span>Swipe LEFT to move "backwards".</span>
           </li>
         </ul>
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
@@ -57,115 +50,34 @@ function Page() {
             allowFullScreen
           ></iframe>
           <p className={"italic text-white"}>
-            How To Use The Rotor On An iPhone Video
-          </p>
-        </div>
-        <h3 className={"font-bold mt-15 mb-4 text-lg text-center"}>
-          Using the Reader Controls on Android
-        </h3>
-        <ul className={"mb-8"}>
-          <li className={"mb-2"}>
-            <span className={"font-bold"}>Step 1</span> -{" "}
-            <span>Turn on Screen Reader.</span>
-          </li>
-          <li className={"mb-2"}>
-            <span className={"font-bold"}>Step 2</span> -{" "}
-            <span>Swipe down with three fingers to select a content type.</span>
-          </li>
-          <li className={"mb-2"}>
-            <span className={"font-bold"}>Step 3</span> -{" "}
-            <span>Swipe DOWN to move "forwards".</span>
-          </li>
-          <li className={"mb-2"}>
-            <span className={"font-bold"}>Step 4</span> -{" "}
-            <span>Swipe UP to move "backwards".</span>
-          </li>
-        </ul>
-        <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
-          <iframe
-            className={"w-full min-h-[300px]"}
-            src="https://www.youtube.com/embed/O-U7u6POygQ"
-            title=""
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-          <p className={"italic text-white"}>
-            How To Use Reading Controls On An Andorid Phone
+            How To Swipe on a Mobile Phone Video
           </p>
         </div>
       </div>
+
       <div
         className={
           "text-white p-4 pt-10 practice-section max-w-[500px] mx-auto"
         }
       >
-        <main className="text-white pt-10 practice-section" role="main">
-          <section aria-label="Intro Section">
-            <h2>Welcome to the Rotor / Reading Control Practice</h2>
-            <p>
-              You are learning to move through pages more efficiently by jumping
-              between types of content.
-            </p>
-          </section>
-
-          <section aria-label="Clue Types">
-            <h2>Common Things to Look For</h2>
-            <ul className="list-disc list-inside">
-              <li>Headings – great for structure</li>
-              <li>Links – used for navigation</li>
-              <li>Form Fields – inputs, buttons, toggles</li>
-              <li>Tables – to compare data or info</li>
-            </ul>
-          </section>
-
-          <section aria-label="Navigation Tip">
-            <h2>Navigation Tips</h2>
-            <p>
-              In the real puzzles, you might want to jump directly to headings
-              to get a sense of the page layout before swiping
-              element-by-element.
-            </p>
-            <p>
-              If you're on iOS, twist two fingers on the screen like you're
-              turning a dial to open the rotor.
-            </p>
-            <p>
-              On Android, swipe up or down with three fingers to cycle between
-              navigation modes.
-            </p>
-          </section>
-
-          <nav aria-label="Helpful Links">
-            <h2>Useful Links</h2>
-            <ul className="list-disc list-inside">
-              <li>
-                <a href="#" className="underline text-blue-300">
-                  Link Example 1
-                </a>
-              </li>
-              <li>
-                <a href="#" className="underline text-blue-300">
-                  Link Example 2
-                </a>
-              </li>
-              <li>
-                <a href="#" className="underline text-blue-300">
-                  Link Example 3
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <footer role="contentinfo">
-            <p className="mt-8 text-sm text-white">
-              You’ve reached the end of this practice page. If you got here
-              using the rotor or menu, well done!
-            </p>
-          </footer>
-        </main>
+        <p>Welcome to the Mobile Mystery House.</p>
+        <p>Each room is filled with secrets you can only find by listening.</p>
+        <p>
+          You'll explore by swiping left and right to hear everything that's
+          hidden.
+        </p>
+        <p>
+          Sometimes clues will be announced in headings, buttons, or form
+          fields.
+        </p>
+        <p>Use your screen reader and swipe carefully.</p>
+        <p>
+          If you got here, you're doing great. When you're ready, move on to the
+          next lesson.
+        </p>
       </div>
 
-      <div className="flex flex-col pt-10 max-w-[500px] mx-auto">
+      <div className="flex flex-col pt-10  max-w-[500px] mx-auto">
         <a className="bg-white text-center p-3 mb-8" href="/practice/">
           Back
         </a>

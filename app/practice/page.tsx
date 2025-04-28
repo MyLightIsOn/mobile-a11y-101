@@ -35,19 +35,24 @@ function Page() {
 
         <div className="flex flex-col pt-10 max-w-[500px] mx-auto text-white">
           <a className="text-center p-3 mb-8" href="/practice/1">
-            <span className={"font-bold"}>Lesson 1 - Swiping</span>
+            <span className={"font-bold"}>Lesson 1 - Screen Reader Setup</span>{" "}
             <br />
             Move element by element
           </a>
           <a className="text-center p-3 mb-8" href="/practice/2">
+            <span className={"font-bold"}>Lesson 2 - Swiping</span>
+            <br />
+            Move element by element
+          </a>
+          <a className="text-center p-3 mb-8" href="/practice/3">
             <span className={"font-bold"}>
-              Lesson 2 - Rotor/Reading Controls
+              Lesson 3 - Rotor/Reading Controls
             </span>{" "}
             <br />
             Jump by content type
           </a>
-          <a className="text-center p-3 mb-8" href="/practice/3">
-            <span className={"font-bold"}>Lesson 3 - Activating Elements</span>{" "}
+          <a className="text-center p-3 mb-8" href="/practice/4">
+            <span className={"font-bold"}>Lesson 4 - Activating Elements</span>{" "}
             <br />
             Interact with buttons and links
           </a>
