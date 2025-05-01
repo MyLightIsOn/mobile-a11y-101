@@ -51,7 +51,7 @@ function Page() {
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
             className={"w-full min-h-[300px]"}
-            src="https://www.youtube.com/embed/H6usoQxszi8"
+            src="https://www.youtube.com/embed/GwAoZ8u2TxY"
             title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -84,7 +84,7 @@ function Page() {
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
             className={"w-full min-h-[300px]"}
-            src="https://www.youtube.com/embed/O-U7u6POygQ"
+            src="https://www.youtube.com/embed/brYkq82apbY"
             title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
