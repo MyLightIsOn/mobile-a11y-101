@@ -177,9 +177,9 @@ const Page = () => {
         </section>
       </div>
 
-      <div className="flex flex-col pt-10">
+      <div className="flex flex-col pt-10 max-w-[500px] mx-auto">
         <a className="bg-white text-center p-3 mb-8" href="/practice/">
-          Back
+          Lesson Homepage
         </a>
       </div>
     </div>

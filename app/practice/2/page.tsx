@@ -44,7 +44,7 @@ function Page() {
         <div className="text-center text-black rounded mb-6 mx-auto flex justify-center items-center py-2 flex-col w-full">
           <iframe
             className={"w-full min-h-[300px]"}
-            src="https://www.youtube.com/embed/H6usoQxszi8"
+            src="https://www.youtube.com/embed/LM3QHsKPibw"
             title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -77,9 +77,12 @@ function Page() {
         </p>
       </div>
 
-      <div className="flex flex-col pt-10  max-w-[500px] mx-auto">
-        <a className="bg-white text-center p-3 mb-8" href="/practice/">
-          Back
+      <div className="flex pt-10 max-w-[500px] mx-auto justify-center gap-4">
+        <a className="bg-white text-center p-3 mb-8 w-1/2" href="/practice/">
+          Lesson Homepage
+        </a>
+        <a className="bg-white text-center p-3 mb-8 w-1/2" href="/practice/3">
+          Next Lesson
         </a>
       </div>
     </div>

@@ -15,21 +15,15 @@ const dialogContent: DialogContentType = {
     <div className={"text-sm text-left mt-6"}>
       <ol className={"list-decimal px-5"}>
         <li className={"mb-4"}>
-          This game is designed for mobile screen reader users.
+          This game is designed for mobile screen reader.
         </li>
 
         <li className={"mb-4"}>
-          Explore each page using gestures, taps, and focus navigation.
+          For each puzzle, SWIPE until you hear instructions. They are only
+          visible to screen readers.
         </li>
 
-        <li className={"mb-4"}>
-          Don’t trust your eyes! What’s hidden may only be revealed through
-          other senses.
-        </li>
-
-        <li className={"mb-4"}>
-          Turn on your screen reader. Follow the clues. Solve the mystery!
-        </li>
+        <li className={"mb-4"}>Don’t trust your eyes!</li>
 
         <li className={"mb-4"}>
           If you get stuck on a puzzle, tap me for a hint.
