@@ -22,8 +22,10 @@ function PuzzleLink({ number }: { number: number }) {
     if (localStorage?.getItem(puzzleKey)) {
       setPuzzleComplete(true);
       const rawBestTime = localStorage.getItem(`puzzle_${number + 1}_time`);
-      const timeToDisplay = formatTime(rawBestTime);
-      setBestTime(timeToDisplay);
+      if (rawBestTime != null) {
+        const timeToDisplay = formatTime(parseInt(rawBestTime));
+        setBestTime(timeToDisplay);
+      }
     }
   }, []);
 
