@@ -37,6 +37,15 @@ const Page = () => {
     { visible: "", aria: "", isCorrect: false },
   ]);
   const [puzzleSolved, setPuzzleSolved] = useState(false);
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setElapsedTime((prev) => prev + 1);
+    }, 1000);
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, []);
 
   function shuffle(array: Array<Button>) {
     // Fisher-Yates shuffle
@@ -83,6 +92,7 @@ const Page = () => {
   function handleClick(isCorrect: boolean) {
     if (isCorrect) {
       setPuzzleSolved(true);
+      localStorage.setItem("puzzle_2_time", elapsedTime.toString());
       localStorage.setItem("puzzle_2_complete", "true");
     } else {
       const newButtons: Array<Button> = generateButtons();

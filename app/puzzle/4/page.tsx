@@ -34,6 +34,8 @@ const Page = () => {
   const [isLockedOut, setIsLockedOut] = useState(false);
   const [timer, setTimer] = useState(10);
   const [puzzleSolved, setPuzzleSolved] = useState(false);
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
   const handleClick = (digit: string) => {
     if (inputValue.length < 4) {
@@ -53,6 +55,14 @@ const Page = () => {
       setInputValue("");
     }
   };
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setElapsedTime((prev) => prev + 1);
+    }, 1000);
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     if (isLockedOut && timer > 0) {
@@ -213,6 +223,7 @@ const Page = () => {
                 handleSubmit();
               } else {
                 setPuzzleSolved(true);
+                localStorage.setItem("puzzle_4_time", elapsedTime.toString());
                 localStorage.setItem("puzzle_4_complete", "true");
               }
             }}

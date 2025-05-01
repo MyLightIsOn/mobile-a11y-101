@@ -36,6 +36,16 @@ function Page() {
     false,
   ]);
 
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setElapsedTime((prev) => prev + 1);
+    }, 1000);
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setDivsVisibility((currentVisibility) => {
@@ -352,6 +362,7 @@ function Page() {
           className={"sr-only"}
           onClick={() => {
             setPuzzleSolved(true);
+            localStorage.setItem("puzzle_1_time", elapsedTime.toString());
             localStorage.setItem("puzzle_1_complete", "true");
           }}
         >

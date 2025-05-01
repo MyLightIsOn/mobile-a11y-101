@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
 import PuzzleCompleteButton from "@/components/puzzle-complete-button";
 
@@ -30,6 +30,15 @@ const puzzleSolvedContent = {
 const Puzzle3 = () => {
   const [fixedPainting, setFixedPainting] = useState<any[]>([]);
   const [puzzleSolved, setPuzzleSolved] = useState(false);
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setElapsedTime((prev) => prev + 1);
+    }, 1000);
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="bg-black text-white min-h-screen w-screen text-center p-4 pb-30">
@@ -89,6 +98,7 @@ const Puzzle3 = () => {
                   "kid",
                 ]);
                 setPuzzleSolved(true);
+                localStorage.setItem("puzzle_3_time", elapsedTime.toString());
                 localStorage.setItem("puzzle_3_complete", "true");
               }
             }}

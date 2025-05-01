@@ -34,10 +34,8 @@ const Page = () => {
   const [timer, setTimer] = useState(10);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [puzzleSolved, setPuzzleSolved] = useState(false);
-
-  const handleChange = (e: { target: { id: any; value: any } }) => {
-    setInputs({ ...inputs, [e.target.id]: e.target.value });
-  };
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -49,12 +47,25 @@ const Page = () => {
       first.trim().toLowerCase() === "jim"
     ) {
       setPuzzleSolved(true);
+      localStorage.setItem("puzzle_2_time", elapsedTime.toString());
       localStorage.setItem("puzzle_5_complete", "true");
     } else {
       setIsLockedOut(true);
       setTimer(10);
       inputRef.current?.focus();
     }
+  };
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setElapsedTime((prev) => prev + 1);
+    }, 1000);
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, []);
+
+  const handleChange = (e: { target: { id: any; value: any } }) => {
+    setInputs({ ...inputs, [e.target.id]: e.target.value });
   };
 
   useEffect(() => {
