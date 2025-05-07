@@ -55,34 +55,12 @@ function Page() {
         </div>
       </div>
 
-      <div
-        className={
-          "text-white p-4 pt-10 practice-section max-w-[500px] mx-auto"
-        }
-      >
-        <p>Welcome to the Mobile Mystery House.</p>
-        <p>Each room is filled with secrets you can only find by listening.</p>
-        <p>
-          You'll explore by swiping left and right to hear everything that's
-          hidden.
-        </p>
-        <p>
-          Sometimes clues will be announced in headings, buttons, or form
-          fields.
-        </p>
-        <p>Use your screen reader and swipe carefully.</p>
-        <p>
-          If you got here, you're doing great. When you're ready, move on to the
-          next lesson.
-        </p>
-      </div>
-
-      <div className="flex pt-10 max-w-[500px] mx-auto justify-center gap-4">
-        <a className="bg-white text-center p-3 mb-8 w-1/2" href="/practice/">
-          Lesson Homepage
+      <div className="flex flex-col pt-10 max-w-[500px] mx-auto justify-center">
+        <a className="bg-white text-center p-3 mb-4" href="/lessons/">
+          Lessons Homepage
         </a>
-        <a className="bg-white text-center p-3 mb-8 w-1/2" href="/practice/3">
-          Next Lesson
+        <a className="bg-white text-center p-3 mb-8" href="/lessons/2/practice">
+          Practice
         </a>
       </div>
     </div>

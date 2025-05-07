@@ -16,7 +16,7 @@ export default function Home() {
           Mobile Mystery House
         </h1>
         <h2 className={"text-white text-center mb-10"}>
-          A Digital Escape Room for Learning Mobile Accessibility
+          Digital Puzzles for Learning Mobile Accessibility
         </h2>
         <a
           href={"/getting-started"}

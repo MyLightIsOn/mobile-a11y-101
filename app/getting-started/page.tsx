@@ -50,7 +50,7 @@ function Page() {
       <h1 className={"text-center text-2xl font-bold mb-4"}>Welcome</h1>
       <div className={"flex flex-col mx-auto gap-4 max-w-[500px]"}>
         <a
-          href={"/practice"}
+          href={"/lessons"}
           className={
             "text-white text-center underline px-10 py-4 border-white border focus:border-dashed hover:border-dashed mx-auto w-full min-w-60 uppercase"
           }
