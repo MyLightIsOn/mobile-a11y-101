@@ -1,21 +1,6 @@
 "use client";
-import React, { useRef } from "react";
 
 const Page = () => {
-  const activeElementRef = useRef<HTMLElement | null>(null);
-
-  const showAlert = (message: string) => {
-    // Store the currently focused element
-    activeElementRef.current = document.activeElement as HTMLElement;
-
-    alert(message);
-
-    // Return focus to the element that was active before the alert
-    if (activeElementRef.current) {
-      activeElementRef.current.focus();
-    }
-  };
-
   return (
     <div
       className="p-4 min-h-screen"
@@ -72,114 +57,12 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="text-white p-4 pt-10 max-w-[500px] mx-auto space-y-6">
-        <section aria-label="Button Section">
-          <h2 className="text-lg font-bold mb-2">Try Pressing This Button</h2>
-          <button
-            onClick={() =>
-              showAlert(
-                "This is a button. While some buttons look like links and links look like buttons, they are not the same. Generally, buttons will change something on the page—a link opens a new page. For screen reader users, this distinction is important because it tells them what should happen when they press that button.",
-              )
-            }
-            className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded"
-          >
-            Tap Me
-          </button>
-        </section>
-
-        <section aria-label="Link Section">
-          <h2 className="text-lg font-bold mb-2 mt-10">
-            Find and Follow This Link
-          </h2>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              showAlert(
-                "This is a link. Links are used to move to other pages or sections. Screen readers announce them as links, and users expect navigation—not in-page actions.",
-              );
-            }}
-            className="underline text-blue-300"
-          >
-            Mysterious Link
-          </a>
-        </section>
-
-        <section aria-label="Dropdown Section">
-          <h2 className="text-lg font-bold mb-2 mt-10">Try a Dropdown</h2>
-          <label htmlFor="locationSelect">Choose a spooky location:</label>
-          <select
-            id="locationSelect"
-            className="block bg-black text-white border mt-2 px-2 py-1"
-            onChange={() =>
-              showAlert(
-                "This is a dropdown (select menu). It lets screen reader users choose one item from a list.",
-              )
-            }
-          >
-            <option>Attic</option>
-            <option>Cellar</option>
-            <option>Foyer</option>
-            <option>Secret Passage</option>
-          </select>
-        </section>
-
-        <section aria-label="Radio Buttons">
-          <h2 className="text-lg font-bold mb-2 mt-10">Choose One</h2>
-          <fieldset>
-            <legend>Pick your favorite haunted object:</legend>
-            <label>
-              <input
-                type="radio"
-                name="object"
-                value="mirror"
-                className="mr-2"
-                onClick={() =>
-                  showAlert(
-                    "These are radio buttons. Screen reader users can use them to choose one option from a group.",
-                  )
-                }
-              />
-              Haunted Mirror
-            </label>
-            <br />
-            <label>
-              <input
-                type="radio"
-                name="object"
-                value="doll"
-                className="mr-2"
-                onClick={() =>
-                  showAlert(
-                    "These are radio buttons. Screen reader users can use them to choose one option from a group.",
-                  )
-                }
-              />
-              Cursed Doll
-            </label>
-          </fieldset>
-        </section>
-
-        <section aria-label="Checkbox Practice">
-          <h2 className="text-lg font-bold mb-2 mt-10">Check This Box</h2>
-          <label>
-            <input
-              type="checkbox"
-              className="mr-2"
-              onClick={() =>
-                showAlert(
-                  "This is a checkbox. Screen reader users can toggle this on or off. They’re often used for agreeing to terms or selecting multiple options.",
-                )
-              }
-            />
-            I agree not to awaken any spirits
-          </label>
-        </section>
-      </div>
-
-      <div className="flex flex-col pt-10 max-w-[500px] mx-auto">
-        <a className="bg-white text-center p-3 mb-8" href="/practice/">
-          Lesson Homepage
+      <div className="flex flex-col px-4 pt-10 max-w-[500px] mx-auto justify-center">
+        <a className="bg-white text-center p-3 mb-4" href="/lessons/4/practice">
+          Practice
+        </a>
+        <a className="bg-white text-center p-3 mb-14" href="/lessons/">
+          Lessons Homepage
         </a>
       </div>
     </div>
