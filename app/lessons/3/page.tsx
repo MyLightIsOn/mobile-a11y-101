@@ -94,83 +94,13 @@ function Page() {
           </p>
         </div>
       </div>
-      <div
-        className={
-          "text-white p-4 pt-10 practice-section max-w-[500px] mx-auto"
-        }
-      >
-        <main className="text-white pt-10 practice-section" role="main">
-          <section aria-label="Intro Section">
-            <h2>Welcome to the Rotor / Reading Control Practice</h2>
-            <p>
-              You are learning to move through pages more efficiently by jumping
-              between types of content.
-            </p>
-          </section>
 
-          <section aria-label="Clue Types">
-            <h2>Common Things to Look For</h2>
-            <ul className="list-disc list-inside">
-              <li>Headings – great for structure</li>
-              <li>Links – used for navigation</li>
-              <li>Form Fields – inputs, buttons, toggles</li>
-              <li>Tables – to compare data or info</li>
-            </ul>
-          </section>
-
-          <section aria-label="Navigation Tip">
-            <h2>Navigation Tips</h2>
-            <p>
-              In the real puzzles, you might want to jump directly to headings
-              to get a sense of the page layout before swiping
-              element-by-element.
-            </p>
-            <p>
-              If you're on iOS, twist two fingers on the screen like you're
-              turning a dial to open the rotor.
-            </p>
-            <p>
-              On Android, swipe up or down with three fingers to cycle between
-              navigation modes.
-            </p>
-          </section>
-
-          <nav aria-label="Helpful Links">
-            <h2>Useful Links</h2>
-            <ul className="list-disc list-inside">
-              <li>
-                <a href="#" className="underline text-blue-300">
-                  Link Example 1
-                </a>
-              </li>
-              <li>
-                <a href="#" className="underline text-blue-300">
-                  Link Example 2
-                </a>
-              </li>
-              <li>
-                <a href="#" className="underline text-blue-300">
-                  Link Example 3
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <footer role="contentinfo">
-            <p className="mt-8 text-sm text-white">
-              You’ve reached the end of this practice page. If you got here
-              using the rotor or menu, well done!
-            </p>
-          </footer>
-        </main>
-      </div>
-
-      <div className="flex pt-10 max-w-[500px] mx-auto justify-center gap-4">
-        <a className="bg-white text-center p-3 mb-8 w-1/2" href="/practice/">
-          Lesson Homepage
+      <div className="flex flex-col px-4 pt-10 max-w-[500px] mx-auto justify-center">
+        <a className="bg-white text-center p-3 mb-4" href="/lessons/3/practice">
+          Practice
         </a>
-        <a className="bg-white text-center p-3 mb-8 w-1/2" href="/practice/4">
-          Next Lesson
+        <a className="bg-white text-center p-3 mb-14" href="/lessons/">
+          Lessons Homepage
         </a>
       </div>
     </div>

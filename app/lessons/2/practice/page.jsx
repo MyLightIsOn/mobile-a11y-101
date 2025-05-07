@@ -23,10 +23,13 @@ function Page() {
           <p>This will move to ALL elements with readable text.</p>
           <p>Such as buttons, links, images, etc.</p>
           <p>
-            After you have practiced a bit, tap the lightbulb to "turn off the
-            lights".
+            After you have practiced a bit, turn off your screen reader and tap
+            the lightbulb to "turn off the lights".
           </p>
-          <p>With the lights off, try these same gestures.</p>
+          <p>
+            With the lights off, turn your screen reader back on and try these
+            same gestures.
+          </p>
           <p>
             When you are done, turn off your screen reader and go to the next
             lesson
