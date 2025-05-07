@@ -105,12 +105,12 @@ function Page() {
           </p>
         </div>
       </div>
-      <div className="flex pt-10 max-w-[500px] mx-auto justify-center gap-4">
-        <a className="bg-white text-center p-3 mb-8 w-1/2" href="/practice/">
-          Lesson Homepage
-        </a>
-        <a className="bg-white text-center p-3 mb-8 w-1/2" href="/practice/2">
+      <div className="flex flex-col px-4 pt-10 max-w-[500px] mx-auto justify-center text-black">
+        <a className="bg-white text-center p-3 mb-4" href="/lessons/2">
           Next Lesson
+        </a>
+        <a className="bg-white text-center p-3 mb-14" href="/lessons/">
+          Back
         </a>
       </div>
     </div>

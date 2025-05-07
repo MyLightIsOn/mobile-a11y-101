@@ -55,12 +55,12 @@ function Page() {
         </div>
       </div>
 
-      <div className="flex flex-col pt-10 max-w-[500px] mx-auto justify-center">
-        <a className="bg-white text-center p-3 mb-4" href="/lessons/">
-          Lessons Homepage
-        </a>
-        <a className="bg-white text-center p-3 mb-8" href="/lessons/2/practice">
+      <div className="flex flex-col px-4 pt-10 max-w-[500px] mx-auto justify-center">
+        <a className="bg-white text-center p-3 mb-4" href="/lessons/2/practice">
           Practice
+        </a>
+        <a className="bg-white text-center p-3 mb-14" href="/lessons/">
+          Lessons Homepage
         </a>
       </div>
     </div>

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
-function Lightbulb() {
+function Lightbulb({ children }: { children: ReactNode }) {
   const [lightOn, setLightOn] = useState(true);
 
   return (
@@ -23,6 +23,9 @@ function Lightbulb() {
             <span></span>
           </div>
         </div>
+      </div>
+      <div className={`text-white ${lightOn ? "opacity-100" : "opacity-0"}`}>
+        {children}
       </div>
     </div>
   );
