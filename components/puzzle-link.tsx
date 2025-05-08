@@ -9,7 +9,7 @@ const rooms = [
   "living room",
   "gallery",
   "dining room",
-  "hallway",
+  "study",
   "library",
 ];
 

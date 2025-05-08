@@ -1,24 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
-
 const Page = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [error, setError] = useState("");
-  const inputRef = useRef<HTMLInputElement | null>(null);
-
-  const handleSubmit = () => {
-    if (inputValue.trim().toLowerCase() === "a11y") {
-      alert(
-        "Correct! Input fields and labels are common and critical in accessibility. During the game, if you encounter a form field, make sure to pay attention to the label (wink, wink).",
-      );
-      setError("");
-    } else {
-      setError("That's not quite right. Try again.");
-      inputRef.current?.focus();
-    }
-  };
-
   return (
     <div className="p-4">
       <h1 className="text-center mb-10">Lesson 5: Input Fields</h1>
@@ -37,29 +19,36 @@ const Page = () => {
       </div>
 
       <div className="text-white p-4 pt-10 max-w-[500px] mx-auto">
-        <label htmlFor="abbreviation" className="block text-lg font-bold mb-2">
-          What is the abbreviation for accessibility? (Answer: a11y)
-        </label>
-        <input
-          id="abbreviation"
-          ref={inputRef}
-          type="text"
-          className="block w-full px-2 py-1 bg-black text-white border"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          aria-describedby="error-text"
-        />
-        {error && (
-          <p id="error-text" className="text-red-400 mt-2">
-            {error}
-          </p>
-        )}
-        <button
-          onClick={handleSubmit}
-          className="mt-4 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded"
+        <table
+          title="Practice table"
+          className="w-full border border-white"
+          role="table"
         >
-          Submit
-        </button>
+          <thead>
+            <tr>
+              <th className="border p-2">left side of the table</th>
+              <th className="border p-2">middle of the table</th>
+              <th className="border p-2">right side of table</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border p-2">Top row</td>
+              <td className="border p-2">Top row</td>
+              <td className="border p-2">Top row</td>
+            </tr>
+            <tr>
+              <td className="border p-2">Middle row</td>
+              <td className="border p-2">Middle row</td>
+              <td className="border p-2">Middle row</td>
+            </tr>
+            <tr>
+              <td className="border p-2">Bottom row</td>
+              <td className="border p-2">Bottom row</td>
+              <td className="border p-2">Bottom row</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div className="flex flex-col pt-10">
