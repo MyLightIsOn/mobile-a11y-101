@@ -2,58 +2,38 @@
 
 const Page = () => {
   return (
-    <div className="p-4">
-      <h1 className="text-center mb-10">Lesson 5: Input Fields</h1>
+    <div
+      className="p-4 min-h-screen"
+      style={{
+        backgroundImage: "url('/playground.webp')",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <h1 className="text-center mb-10">Lesson 5: Navigating Tables</h1>
 
-      <div className="text-left bg-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
+      <div className="text-left bg-black/50 text-white p-4 rounded-sm info-box max-w-[500px] mx-auto">
         <p className="mb-4">
-          Input fields allow screen reader users to type in answers or provide
-          information. They must be labeled properly so the screen reader can
-          announce their purpose.
+          Tables are very common on the internet. Learning how to navigate them
+          with a screen reader is very useful.
+        </p>
+        <p>
+          The good news is that it is easy as long as the table is accessible.
         </p>
         <div className="bg-gray-200 text-center text-black p-6 rounded mb-6">
           {/* Video placeholder */}
           <p className="italic">[Video demo coming soon]</p>
         </div>
-        Try typing the correct answer below and submitting it.
       </div>
 
-      <div className="text-white p-4 pt-10 max-w-[500px] mx-auto">
-        <table
-          title="Practice table"
-          className="w-full border border-white"
-          role="table"
-        >
-          <thead>
-            <tr>
-              <th className="border p-2">left side of the table</th>
-              <th className="border p-2">middle of the table</th>
-              <th className="border p-2">right side of table</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border p-2">Top row</td>
-              <td className="border p-2">Top row</td>
-              <td className="border p-2">Top row</td>
-            </tr>
-            <tr>
-              <td className="border p-2">Middle row</td>
-              <td className="border p-2">Middle row</td>
-              <td className="border p-2">Middle row</td>
-            </tr>
-            <tr>
-              <td className="border p-2">Bottom row</td>
-              <td className="border p-2">Bottom row</td>
-              <td className="border p-2">Bottom row</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div className="flex flex-col pt-10">
-        <a className="bg-white text-center p-3 mb-8" href="/practice/">
-          Back
+      <div className="flex flex-col px-4 pt-10 max-w-[500px] mx-auto justify-center">
+        <a className="bg-white text-center p-3 mb-4" href="/lessons/5/practice">
+          Practice
+        </a>
+        <a className="bg-white text-center p-3 mb-14" href="/lessons/">
+          Lessons Homepage
         </a>
       </div>
     </div>

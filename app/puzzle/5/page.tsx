@@ -166,9 +166,9 @@ const Page = () => {
                   localStorage.setItem("secret_key", "true");
                 }}
               >
-                In the right bottom drawer, you find a key! You solved this
-                puzzle. I wonder what it unlocks. Maybe you will find out later.
-                Double tap this table cell to pick up the key.
+                In the right bottom drawer, you find a key! I wonder what it
+                unlocks. Maybe you will find out later. Double tap this table
+                cell to pick up the key.
               </span>
             </td>
           </tr>

@@ -3,7 +3,7 @@ import React from "react";
 function Page() {
   return (
     <div
-      className={"min-h-screen"}
+      className={"min-h-screen relative"}
       style={{
         backgroundImage: "url('/playground.webp')",
         backgroundPosition: "center center",
@@ -14,7 +14,7 @@ function Page() {
     >
       <div
         className={
-          "bg-black absolute top-0 left-0 opacity-30 w-screen h-screen"
+          "bg-black absolute left-0 bottom-0 opacity-30 w-screen h-full"
         }
       />
       <div className={"p-4 relative z-10"}>
@@ -60,21 +60,19 @@ function Page() {
             <br />
             Interact with buttons and links
           </a>
+          <a className="text-center p-3 mb-8" href="/lessons/5">
+            <span className={"font-bold underline"}>
+              Lesson 5 - Navigating Tables
+            </span>{" "}
+            <br />
+            Understand structured data
+          </a>
           <a
             className="text-center p-3 mb-8 bg-white text-black"
             href="/getting-started"
           >
             Back
           </a>
-          {/*<a className="bg-white text-center p-3 mb-8" href="/practice/4">
-            <span className={"font-bold"}>Lesson 4 - Input Fields</span> <br />
-            Typing into labeled forms
-          </a>
-          <a className="bg-white text-center p-3 mb-8" href="/practice/5">
-            <span className={"font-bold"}>Lesson 5 - Navigating Tables</span>{" "}
-            <br />
-            Understand structured data
-          </a>*/}
         </div>
       </div>
     </div>
