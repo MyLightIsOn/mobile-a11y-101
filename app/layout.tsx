@@ -16,7 +16,7 @@ const geistMono = Henny_Penny({
 export const metadata: Metadata = {
   title: "Mobile Mystery House",
   description:
-    "Solve the puzzles to learn the basics of using a mobile screen reader",
+    "Solve puzzles to learn the basics of using a mobile screen reader",
 };
 
 export default function RootLayout({
