@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
-import PuzzleCompleteButton from "@/components/puzzle-complete-button";
+import PuzzleComplete from "@/components/puzzle-complete";
 
 const dialogContent = {
   title: "Hint",
@@ -79,7 +79,7 @@ const Puzzle3 = () => {
           }}
         />
 
-        <PuzzleCompleteButton
+        <PuzzleComplete
           dialogContent={puzzleSolvedContent}
           puzzleSolved={puzzleSolved}
           delay={fixedPainting.length !== 3}
@@ -103,7 +103,7 @@ const Puzzle3 = () => {
               }
             }}
           />
-        </PuzzleCompleteButton>
+        </PuzzleComplete>
 
         <img
           src="/dog.webp"

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
-import PuzzleCompleteButton from "@/components/puzzle-complete-button";
+import PuzzleComplete from "@/components/puzzle-complete";
 
 const puzzleSolvedContent = {
   puzzleNumber: 6,
@@ -138,7 +138,7 @@ function Page() {
           </div>
         ))}
       </div>
-      <PuzzleCompleteButton
+      <PuzzleComplete
         dialogContent={puzzleSolvedContent}
         puzzleSolved={puzzleSolved}
       />

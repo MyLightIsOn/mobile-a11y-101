@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import "@/app/mystery-button.css";
 import PuzzleFooter from "@/components/puzzle-footer";
-import PuzzleCompleteButton from "@/components/puzzle-complete-button";
+import PuzzleComplete from "@/components/puzzle-complete";
 import { Trash2Icon, DeleteIcon } from "lucide-react";
 
 const dialogContent = {
@@ -211,7 +211,7 @@ const Page = () => {
             <Trash2Icon className={"mx-auto"} />
           </button>
         </div>
-        <PuzzleCompleteButton
+        <PuzzleComplete
           dialogContent={puzzleSolvedContent}
           puzzleSolved={puzzleSolved}
           buttonText={"Submit"}
@@ -232,7 +232,7 @@ const Page = () => {
           >
             Submit
           </button>
-        </PuzzleCompleteButton>
+        </PuzzleComplete>
       </div>
 
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />

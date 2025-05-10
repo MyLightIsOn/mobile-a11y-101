@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "@/app/mystery-button.css";
 import PuzzleFooter from "@/components/puzzle-footer";
-import PuzzleCompleteButton from "@/components/puzzle-complete-button";
+import PuzzleComplete from "@/components/puzzle-complete";
 
 const dialogContent = {
   title: "Hint",
@@ -133,7 +133,7 @@ const Page = () => {
           buttons.map((btn, idx) => {
             if (btn.isCorrect) {
               return (
-                <PuzzleCompleteButton
+                <PuzzleComplete
                   key={idx}
                   dialogContent={puzzleSolvedContent}
                   puzzleSolved={puzzleSolved}
@@ -157,7 +157,7 @@ const Page = () => {
                   >
                     {btn.visible}
                   </button>
-                </PuzzleCompleteButton>
+                </PuzzleComplete>
               );
             } else {
               return (

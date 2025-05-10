@@ -19,8 +19,8 @@ const dialogContent: DialogContentType = {
         </li>
 
         <li className={"mb-4"}>
-          For each puzzle, SWIPE until you hear instructions. They are only
-          visible to screen readers.
+          For each puzzle, turn on your screen reader and SWIPE until you hear
+          instructions. They are only visible to screen readers.
         </li>
 
         <li className={"mb-4"}>Don’t trust your eyes!</li>
@@ -45,8 +45,6 @@ function Page() {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* This overlay makes it so users have to use a screen reader to get into the game. I have disabled it for now. */}
-      {/*<div className={"absolute bottom-0 right-0"} />*/}
       <h1 className={"text-center text-2xl font-bold mb-4"}>Welcome</h1>
       <div className={"flex flex-col mx-auto gap-4 max-w-[500px]"}>
         <a

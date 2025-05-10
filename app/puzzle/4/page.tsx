@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
 import "@/app/mystery-button.css";
-import PuzzleCompleteButton from "@/components/puzzle-complete-button";
+import PuzzleComplete from "@/components/puzzle-complete";
 
 const dialogContent = {
   title: "Hint",
@@ -183,7 +183,7 @@ const Page = () => {
             />
           </div>
 
-          <PuzzleCompleteButton
+          <PuzzleComplete
             dialogContent={puzzleSolvedContent}
             puzzleSolved={puzzleSolved}
             buttonText={"Submit"}
@@ -195,7 +195,7 @@ const Page = () => {
             >
               Submit
             </button>
-          </PuzzleCompleteButton>
+          </PuzzleComplete>
         </form>
       </div>
 
