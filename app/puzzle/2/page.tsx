@@ -21,7 +21,8 @@ const puzzleSolvedContent = {
   description: (
     <p className={"text-left"}>
       Button text is important. Having phrases like click here are ambiguous and
-      unhelpful. Good text is a foundation of a good experience.
+      unhelpful. Good text is a foundation of a good experience. You can turn
+      off your screen reader now and press OK.
     </p>
   ),
 };
@@ -39,6 +40,7 @@ const Page = () => {
   const [puzzleSolved, setPuzzleSolved] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const [isLockedOut, setIsLockedOut] = useState(false);
   const [timer, setTimer] = useState(10);
 
   useEffect(() => {
@@ -48,8 +50,6 @@ const Page = () => {
     setIntervalId(id);
     return () => clearInterval(id);
   }, []);
-
-  console.log(timer);
 
   function shuffle(array: Array<Button>) {
     // Fisher-Yates shuffle
@@ -74,7 +74,7 @@ const Page = () => {
     ];
 
     // Choose a random index that is NOT 0
-    const correctIndex = Math.floor(Math.random() * (texts.length - 1)) + 1;
+    const correctIndex = Math.floor(Math.random() * (texts.length - 2)) + 2;
 
     const buttons = texts.map((text) => ({
       visible: text,
@@ -85,7 +85,7 @@ const Page = () => {
     // Set the correct button
     buttons[correctIndex] = {
       visible: texts[correctIndex],
-      aria: 'This is the right one!"',
+      aria: 'This is the right one! Double tap to continue"',
       isCorrect: true,
     };
 
@@ -93,20 +93,34 @@ const Page = () => {
     return shuffle(buttons);
   }
 
-  function handleClick(isCorrect: boolean) {
-    if (isCorrect) {
-      setPuzzleSolved(true);
-      localStorage.setItem("puzzle_2_time", elapsedTime.toString());
-      localStorage.setItem("puzzle_2_complete", "true");
-    } else {
-      const newButtons: Array<Button> = generateButtons();
-      setButtons(newButtons);
-    }
-  }
-
   useEffect(() => {
     setButtons(generateButtons());
   }, []);
+
+  useEffect(() => {
+    if (isLockedOut && timer > 0) {
+      const countdown = setTimeout(() => {
+        setTimer((prev) => prev - 1);
+      }, 1000);
+      return () => clearTimeout(countdown);
+    } else if (timer === 0) {
+      setIsLockedOut(false);
+      setButtons(generateButtons());
+    }
+  }, [isLockedOut, timer]);
+
+  if (isLockedOut) {
+    return (
+      <div className="text-white text-center h-screen w-screen absolute top-0 left-0">
+        <div className="text-red-800 bg-red-100 h-full w-full flex items-center justify-center flex-col font-bold text-2xl">
+          WRONG! <br />
+          Try again in:
+          <h3 className={"text-9xl font-bold"}>{timer}</h3>
+          seconds...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -121,7 +135,7 @@ const Page = () => {
       <h1 className="text-2xl font-bold pb-2">Puzzle 2:</h1>
       <h2 className="text-xl pb-20 text-white font-bold">Don't Click Here</h2>
 
-      <p className={"sr-only"}>
+      <p className={"sr-only absolute -top-96 -left-96 overflow-hidden"}>
         You enter the living room. The fireplace has long gone cold, but
         something hums faintly on the coffee table. A set of old buttons sit in
         a neat row—none marked correctly, all tempting. One of them knows the
@@ -131,55 +145,39 @@ const Page = () => {
       <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
         {buttons?.length > 2 &&
           buttons.map((btn, idx) => {
-            if (btn.isCorrect) {
-              return (
-                <PuzzleComplete
-                  key={idx}
-                  dialogContent={puzzleSolvedContent}
-                  puzzleSolved={puzzleSolved}
-                  buttonText={"Click Here!"}
-                >
-                  <button
-                    className="mystery-button mb-5 h-[80px]"
-                    style={{
-                      borderRadius: "12px",
-                      padding: "4px",
-                      fontSize: "14px",
-                    }}
-                    onClick={() => {
-                      setPuzzleSolved(true);
-                      localStorage.setItem(
-                        "puzzle_2_time",
-                        elapsedTime.toString(),
-                      );
-                      localStorage.setItem("puzzle_2_complete", "true");
-                    }}
-                  >
-                    {btn.visible}
-                  </button>
-                </PuzzleComplete>
-              );
-            } else {
-              return (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    handleClick(btn.isCorrect);
-                  }}
-                  aria-label={btn.aria}
-                  className="mystery-button mb-5 h-[80px]"
-                  style={{
-                    borderRadius: "12px",
-                    padding: "4px",
-                    fontSize: "14px",
-                  }}
-                >
-                  {btn.visible}
-                </button>
-              );
-            }
+            return (
+              <button
+                key={idx}
+                className="mystery-button mb-5 h-[80px]"
+                style={{
+                  borderRadius: "12px",
+                  padding: "4px",
+                  fontSize: "14px",
+                }}
+                aria-label={btn.aria}
+                onClick={() => {
+                  if (btn.isCorrect) {
+                    setPuzzleSolved(true);
+                    localStorage.setItem(
+                      "puzzle_2_time",
+                      elapsedTime.toString(),
+                    );
+                    localStorage.setItem("puzzle_2_complete", "true");
+                  } else {
+                    setTimer(10);
+                    setIsLockedOut(true);
+                  }
+                }}
+              >
+                Click Here
+              </button>
+            );
           })}
       </div>
+      <PuzzleComplete
+        dialogContent={puzzleSolvedContent}
+        puzzleSolved={puzzleSolved}
+      />
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
