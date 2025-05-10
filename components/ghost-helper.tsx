@@ -12,7 +12,7 @@ import {
 interface DialogContentProps {
   dialogContent: {
     title: string;
-    description: ReactNode;
+    description?: ReactNode;
   };
 }
 

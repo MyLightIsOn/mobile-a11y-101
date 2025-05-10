@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import GhostHelper from "@/components/ghost-helper";
 
 interface Props {
-  dialogContent: {
+  dialogContent?: {
     title: string;
     description: ReactNode;
   };
@@ -12,9 +12,11 @@ interface Props {
 function PuzzleFooter({ dialogContent, url }: Props) {
   return (
     <>
-      <div className={"fixed bottom-0 right-0 z-20"}>
-        <GhostHelper dialogContent={dialogContent} />
-      </div>
+      {dialogContent && (
+        <div className={"fixed bottom-0 right-0 z-20"}>
+          <GhostHelper dialogContent={dialogContent} />
+        </div>
+      )}
       {url && (
         <div className={"fixed bottom-10 left-5"}>
           <a

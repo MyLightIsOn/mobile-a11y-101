@@ -101,7 +101,7 @@ const Page = () => {
 
   return (
     <div
-      className="bg-black w-screen overflow-hidden text-white text-center p-4 h-full"
+      className="bg-black w-screen stext-white text-center p-4 h-full"
       style={{
         backgroundImage: "url('/study.webp')",
         backgroundPosition: "center center",
