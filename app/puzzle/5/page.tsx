@@ -110,17 +110,23 @@ const Page = () => {
       }}
     >
       <h1 className="text-2xl font-bold pb-2 relative z-10">Puzzle 5:</h1>
-      <h2 className="text-xl pb-4 relative z-10">The Table of Secrets</h2>
-      <p className={"sr-only"}>
+      <h2 className="text-xl pb-4 relative z-10 text-white">
+        The Table of Secrets
+      </h2>
+      <p className={"sr-only -top-96 -left-96 overflow-hidden"}>
         You step into a quiet study. Shelves sag under the weight of forgotten
         books. In the center stands a heavy desk, its drawers worn by time and
         secrets. If you want answers, you’ll have to search every compartment.
         And I mean every one.
       </p>
 
+      <div className="text-xl relative z-10 text-white" aria-hidden>
+        Passcode: {getMaskedInput()}
+      </div>
+
       <table
         title="Table of Secrets"
-        className={"sr-only relative left-[-900%] opacity-0 -z-50"}
+        className={"sr-only absolute -top-96 opacity-0 -z-50"}
       >
         <thead>
           <tr>
@@ -147,7 +153,8 @@ const Page = () => {
             </td>
             <td>
               In the middle top drawer, there is an old sheet of paper with
-              writing on it. It says “A11y”.
+              writing on it. It says “A11y”. Could this be a passcode of some
+              sort?
             </td>
             <td>The right top drawer is missing</td>
           </tr>
@@ -175,7 +182,7 @@ const Page = () => {
         </tbody>
       </table>
 
-      <div className="-mt-15">
+      <div className="">
         <div className="mb-4 text-xl relative z-10">
           Passcode: {getMaskedInput()}
         </div>
