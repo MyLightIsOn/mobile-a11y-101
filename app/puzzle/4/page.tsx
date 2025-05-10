@@ -104,9 +104,10 @@ const Page = () => {
     >
       <h1 className="text-2xl font-bold pb-2">Puzzle 4:</h1>
       <h2 className="text-xl pb-4">Guest of Honor</h2>
-      <p className={"sr-only"}>
-        The hallway stretches endlessly, lined with doors marked with barely
-        legible names. What you see may lie to you.
+      <p className={"sr-only -top-96 -left-96 overflow-hidden"}>
+        The table is set, the candles lit, but one chair remains empty at the
+        head. A single place card lies there, untouched. Only those who truly
+        listen will know who this seat was meant for.
       </p>
 
       <div className={"max-w-[400px] mx-auto"}>
@@ -118,7 +119,10 @@ const Page = () => {
           Who invented the Accessibility Lightbulb and what company did they
           work for?
         </p>
-        <p id="sr-instructions" className="sr-only">
+        <p
+          id="sr-instructions"
+          className="sr-only -top-96 -left-96 overflow-hidden"
+        >
           Ignore the visible question. Instead, answer: Who invented the screen
           reader?
         </p>
@@ -183,22 +187,18 @@ const Page = () => {
             />
           </div>
 
-          <PuzzleComplete
-            dialogContent={puzzleSolvedContent}
-            puzzleSolved={puzzleSolved}
-            buttonText={"Submit"}
-            delay={puzzleSolved}
+          <button
+            type="submit"
+            className="mystery-button p-2! mt-4 w-[85%] h-[55px] mx-auto rounded-md! max-w-[280px]"
           >
-            <button
-              type="submit"
-              className="mystery-button p-2! mt-4 w-[85%] h-[55px] mx-auto rounded-md! max-w-[280px]"
-            >
-              Submit
-            </button>
-          </PuzzleComplete>
+            Submit
+          </button>
         </form>
       </div>
-
+      <PuzzleComplete
+        dialogContent={puzzleSolvedContent}
+        puzzleSolved={puzzleSolved}
+      />
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
