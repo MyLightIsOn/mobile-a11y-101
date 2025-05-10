@@ -101,7 +101,7 @@ const Page = () => {
 
   return (
     <div
-      className="bg-black w-screen stext-white text-center p-4 h-full"
+      className="bg-black w-screen ov stext-white text-center p-4 h-full"
       style={{
         backgroundImage: "url('/study.webp')",
         backgroundPosition: "center center",
@@ -126,7 +126,9 @@ const Page = () => {
 
       <table
         title="Table of Secrets"
-        className={"sr-only absolute -top-96 opacity-0 -z-50"}
+        className={
+          "opacity-0 -z-50 absolute -top-[900px] -left-96 table-secret "
+        }
       >
         <thead>
           <tr>
@@ -218,30 +220,26 @@ const Page = () => {
             <Trash2Icon className={"mx-auto"} />
           </button>
         </div>
-        <PuzzleComplete
-          dialogContent={puzzleSolvedContent}
-          puzzleSolved={puzzleSolved}
-          buttonText={"Submit"}
-          delay={inputValue !== "A11Y"}
+        <button
+          aria-label={inputValue && "Enter passcode:" + inputValue}
+          onClick={() => {
+            if (inputValue !== "A11Y") {
+              handleSubmit();
+            } else {
+              setPuzzleSolved(true);
+              localStorage.setItem("puzzle_5_time", elapsedTime.toString());
+              localStorage.setItem("puzzle_5_complete", "true");
+            }
+          }}
+          className="mystery-button p-2! w-[85%] h-[55px] mx-auto mt-8 rounded-md! max-w-[280px]"
         >
-          <button
-            aria-label={inputValue && "Enter passcode:" + inputValue}
-            onClick={() => {
-              if (inputValue !== "A11Y") {
-                handleSubmit();
-              } else {
-                setPuzzleSolved(true);
-                localStorage.setItem("puzzle_5_time", elapsedTime.toString());
-                localStorage.setItem("puzzle_5_complete", "true");
-              }
-            }}
-            className="mystery-button p-2! w-[85%] h-[55px] mx-auto mt-8 rounded-md! max-w-[280px]"
-          >
-            Submit
-          </button>
-        </PuzzleComplete>
+          Submit
+        </button>
       </div>
-
+      <PuzzleComplete
+        dialogContent={puzzleSolvedContent}
+        puzzleSolved={puzzleSolved}
+      />
       <PuzzleFooter dialogContent={dialogContent} url={"/start"} />
     </div>
   );
