@@ -128,7 +128,7 @@ function Page() {
           </div>
         </div>
       )}
-      <div className={"sr-only -left-96 -top-96 overflow-hidden"}>
+      <div className={"sr-only -left-96 -top-96"}>
         <p className={"text-white"}>
           The air grows colder as you descend into the basement. The light
           flickers and fades, then darkness. You hear the creak of old wood and
