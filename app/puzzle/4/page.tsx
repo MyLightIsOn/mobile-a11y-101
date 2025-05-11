@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
 import "@/app/mystery-button.css";
 import PuzzleComplete from "@/components/puzzle-complete";
+import puzzleComplete from "@/lib/puzzleComplete";
 
 const dialogContent = {
   title: "Hint",
@@ -36,6 +37,7 @@ const Page = () => {
   const [puzzleSolved, setPuzzleSolved] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const [startTime, setStartTime] = useState<Date | null>(null);
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -47,8 +49,7 @@ const Page = () => {
       first.trim().toLowerCase() === "jim"
     ) {
       setPuzzleSolved(true);
-      localStorage.setItem("puzzle_4_time", elapsedTime.toString());
-      localStorage.setItem("puzzle_4_complete", "true");
+      puzzleComplete("puzzle_4", startTime, elapsedTime.toString());
     } else {
       setIsLockedOut(true);
       setTimer(10);
@@ -57,6 +58,9 @@ const Page = () => {
   };
 
   useEffect(() => {
+    const newStartTime = new Date();
+    setStartTime(newStartTime);
+
     const id = setInterval(() => {
       setElapsedTime((prev) => prev + 1);
     }, 1000);

@@ -5,6 +5,7 @@ import "@/app/mystery-button.css";
 import PuzzleFooter from "@/components/puzzle-footer";
 import PuzzleComplete from "@/components/puzzle-complete";
 import { Trash2Icon, DeleteIcon } from "lucide-react";
+import puzzleComplete from "@/lib/puzzleComplete";
 
 const dialogContent = {
   title: "Hint",
@@ -36,6 +37,7 @@ const Page = () => {
   const [puzzleSolved, setPuzzleSolved] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const [startTime, setStartTime] = useState<Date | null>(null);
 
   const handleClick = (digit: string) => {
     if (inputValue.length < 4) {
@@ -57,6 +59,9 @@ const Page = () => {
   };
 
   useEffect(() => {
+    const newStartTime = new Date();
+    setStartTime(newStartTime);
+
     const id = setInterval(() => {
       setElapsedTime((prev) => prev + 1);
     }, 1000);
@@ -118,10 +123,6 @@ const Page = () => {
         secrets. If you want answers, you’ll have to search every compartment.
         And I mean every one.
       </p>
-
-      <div className="text-xl relative z-10 text-white" aria-hidden>
-        Passcode: {getMaskedInput()}
-      </div>
 
       <table
         title="Table of Secrets"
@@ -226,8 +227,7 @@ const Page = () => {
               handleSubmit();
             } else {
               setPuzzleSolved(true);
-              localStorage.setItem("puzzle_5_time", elapsedTime.toString());
-              localStorage.setItem("puzzle_5_complete", "true");
+              puzzleComplete("puzzle_5", startTime, elapsedTime.toString());
             }
           }}
           className="mystery-button p-2! w-[85%] h-[55px] mx-auto mt-8 rounded-md! max-w-[280px]"

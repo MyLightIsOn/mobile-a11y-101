@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "@/app/mystery-button.css";
 import PuzzleFooter from "@/components/puzzle-footer";
 import PuzzleComplete from "@/components/puzzle-complete";
+import puzzleComplete from "@/lib/puzzleComplete";
 
 const dialogContent = {
   title: "Hint",
@@ -42,8 +43,11 @@ const Page = () => {
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
   const [isLockedOut, setIsLockedOut] = useState(false);
   const [timer, setTimer] = useState(10);
+  const [startTime, setStartTime] = useState<Date | null>(null);
 
   useEffect(() => {
+    const newStartTime = new Date();
+    setStartTime(newStartTime);
     const id = setInterval(() => {
       setElapsedTime((prev) => prev + 1);
     }, 1000);
@@ -158,11 +162,11 @@ const Page = () => {
                 onClick={() => {
                   if (btn.isCorrect) {
                     setPuzzleSolved(true);
-                    localStorage.setItem(
-                      "puzzle_2_time",
+                    puzzleComplete(
+                      "puzzle_2",
+                      startTime,
                       elapsedTime.toString(),
                     );
-                    localStorage.setItem("puzzle_2_complete", "true");
                   } else {
                     setTimer(10);
                     setIsLockedOut(true);

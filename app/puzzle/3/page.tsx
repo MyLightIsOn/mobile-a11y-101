@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
 import PuzzleComplete from "@/components/puzzle-complete";
+import puzzleComplete from "@/lib/puzzleComplete";
 
 const dialogContent = {
   title: "Hint",
@@ -32,7 +33,12 @@ const Puzzle3 = () => {
   const [puzzleSolved, setPuzzleSolved] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const [startTime, setStartTime] = useState<Date | null>(null);
+
   useEffect(() => {
+    const newStartTime = new Date();
+    setStartTime(newStartTime);
+
     const id = setInterval(() => {
       setElapsedTime((prev) => prev + 1);
     }, 1000);
@@ -43,8 +49,7 @@ const Puzzle3 = () => {
   useEffect(() => {
     if (fixedPainting.length === 4) {
       setPuzzleSolved(true);
-      localStorage.setItem("puzzle_3_time", elapsedTime.toString());
-      localStorage.setItem("puzzle_3_complete", "true");
+      puzzleComplete("puzzle_3", startTime, elapsedTime.toString());
     }
   }, [fixedPainting]);
 

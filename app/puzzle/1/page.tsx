@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
 import PuzzleComplete from "@/components/puzzle-complete";
 import "@/app/eyes.css";
+import puzzleComplete from "@/lib/puzzleComplete";
 
 const dialogContent = {
   title: "Hint",
@@ -38,7 +39,11 @@ function Page() {
 
   const [elapsedTime, setElapsedTime] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const [startTime, setStartTime] = useState<Date | null>(null);
+
   useEffect(() => {
+    const newStartTime = new Date();
+    setStartTime(newStartTime);
     const id = setInterval(() => {
       setElapsedTime((prev) => prev + 1);
     }, 1000);
@@ -353,8 +358,7 @@ function Page() {
           className={"sr-only"}
           onClick={() => {
             setPuzzleSolved(true);
-            localStorage.setItem("puzzle_1_time", elapsedTime.toString());
-            localStorage.setItem("puzzle_1_complete", "true");
+            puzzleComplete("puzzle_1", startTime, elapsedTime.toString());
           }}
         >
           Congratulations! Puzzle 1 has been completed. Double tap this heading

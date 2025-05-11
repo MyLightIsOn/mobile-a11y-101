@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import PuzzleFooter from "@/components/puzzle-footer";
 import PuzzleComplete from "@/components/puzzle-complete";
 import { CircleCheck } from "lucide-react";
+import puzzleComplete from "@/lib/puzzleComplete";
 
 const puzzleSolvedContent = {
   puzzleNumber: 6,
@@ -81,6 +82,7 @@ function Page() {
   const [puzzleSolved, setPuzzleSolved] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+  const [startTime, setStartTime] = useState<Date | null>(null);
 
   const markedRead = (chapterId: string) => {
     setChaptersRead([...chaptersRead, chapterId]);
@@ -94,12 +96,14 @@ function Page() {
     );
     if (checkIfAllPresent) {
       setPuzzleSolved(true);
-      localStorage.setItem("puzzle_6_time", elapsedTime.toString());
-      localStorage.setItem("puzzle_6_complete", "true");
+      puzzleComplete("puzzle_6", startTime, elapsedTime.toString());
     }
   }, [chaptersRead]);
 
   useEffect(() => {
+    const newStartTime = new Date();
+    setStartTime(newStartTime);
+
     const id = setInterval(() => {
       setElapsedTime((prev) => prev + 1);
     }, 1000);
