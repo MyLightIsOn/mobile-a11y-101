@@ -98,10 +98,9 @@ const Page = () => {
         </span>
       ));
   };
-
   return (
     <div
-      className="bg-black w-screen ov stext-white text-center p-4 h-full"
+      className="bg-black w-screen text-white text-center p-4 h-full"
       style={{
         backgroundImage: "url('/study.webp')",
         backgroundPosition: "center center",
