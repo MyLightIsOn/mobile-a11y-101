@@ -44,7 +44,14 @@ function GhostHelper({ dialogContent }: DialogContentProps) {
           <>{dialogContent.description}</>
         </DialogHeader>
         <DialogFooter>
-          <DialogClose type="submit">Ok</DialogClose>
+          <DialogClose
+            className={
+              "bg-black text-white w-full p-2 text-center rounded block"
+            }
+            type="submit"
+          >
+            Ok
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

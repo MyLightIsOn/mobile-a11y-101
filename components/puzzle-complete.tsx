@@ -44,7 +44,14 @@ function PuzzleComplete({
               You have solved puzzle #{dialogContent.puzzleNumber}!
             </p>
             {dialogContent.description}
-            <a href={"/start"}>Ok</a>
+            <a
+              className={
+                "bg-black text-white w-full p-2 text-center rounded block mt-4"
+              }
+              href={"/start"}
+            >
+              Ok
+            </a>
           </div>
         </DialogContent>
       )}

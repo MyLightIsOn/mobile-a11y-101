@@ -117,7 +117,7 @@ const Page = () => {
       <div className={"max-w-[400px] mx-auto"}>
         <p className={"text-center font-bold"}>Accessibililty Trivia!</p>
         <p
-          className="mb-10 bg-white text-black border border-black rounded-sm"
+          className="mb-10 bg-white text-black border border-black rounded-sm !p-4"
           aria-hidden
         >
           Who invented the Accessibility Lightbulb and what company did they

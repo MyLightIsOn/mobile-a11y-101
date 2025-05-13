@@ -55,10 +55,8 @@ const Puzzle3 = () => {
 
   return (
     <div className="bg-black text-white min-h-screen w-screen text-center p-4 pb-30">
-      <h1 className="text-2xl font-bold pb-2">
-        Puzzle 3: The Forgotten Gallery
-      </h1>
-      <h2 className="text-xl pb-4">Speaking Pictures</h2>
+      <h1 className="text-2xl font-bold pb-2">Puzzle 3:</h1>
+      <h2 className="text-xl pb-4">The Forgotten Gallery</h2>
 
       <p className={"sr-only -top-96 -left-96 overflow-hidden"}>
         You step into a cold, breezy room with no windows. The walls are lined
