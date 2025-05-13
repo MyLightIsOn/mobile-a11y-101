@@ -16,7 +16,7 @@ export async function POST(request) {
       api_url,
     });
     console.log(logPuzzleCompletionResult);
-    return NextResponse.json({ message: "Success" }, { status: 200 });
+    return NextResponse.json({ message: "success" }, { status: 200 });
   } catch (error) {
     console.log(error);
     return NextResponse.json({ error: error.message }, { status: 500 });
