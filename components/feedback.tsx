@@ -21,7 +21,7 @@ const FeedbackForm = () => {
       typeof window !== "undefined" ? localStorage.getItem("session_id") : "",
   });
 
-  const [submitted, setSubmitted] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const session = localStorage.getItem("session_id");
@@ -77,11 +77,11 @@ const FeedbackForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-4 rounded max-w-xl mx-auto space-y-6 min-h-screen pb-20"
+      className="bg-white p-4 rounded max-w-xl mx-auto space-y-6 min-h-screen pb-20 "
     >
       <h2 className="text-2xl font-bold text-center">Feedback Survey</h2>
 
-      <div className={"border border-gray-400 rounded-md p-4"}>
+      <div className={"border-2 border-gray-400 rounded-md p-4 bg-gray-100"}>
         <label className="block mb-1 font-bold pb-4">
           1. What was your mobile accessibility experience prior to playing this
           game?
@@ -91,7 +91,7 @@ const FeedbackForm = () => {
           onChange={handleChange}
           value={form.experience}
           required
-          className="w-full p-2 border"
+          className="w-full p-2 border bg-white"
         >
           <option value="">Select one</option>
           <option value="None">No experience</option>
@@ -100,7 +100,7 @@ const FeedbackForm = () => {
         </select>
       </div>
 
-      <div className={"border border-gray-400 rounded-md p-4"}>
+      <div className={"border-2 border-gray-400 rounded-md p-4 bg-gray-100"}>
         <label className="block mb-1 font-bold pb-4">
           2. Do you feel that this game helped you learn about mobile
           accessibility?
@@ -122,7 +122,7 @@ const FeedbackForm = () => {
         </div>
       </div>
 
-      <div className={"border border-gray-400 rounded-md p-4"}>
+      <div className={"border-2 border-gray-400 rounded-md p-4 bg-gray-100"}>
         <label className="block mb-1 font-bold pb-4">
           3. Which was your favorite puzzle?
         </label>
@@ -131,7 +131,7 @@ const FeedbackForm = () => {
           onChange={handleChange}
           value={form.favorite}
           required
-          className="w-full p-2 border"
+          className="w-full p-2 border bg-white"
         >
           <option value="">Select one</option>
           {[1, 2, 3, 4, 5, 6].map((n) => (
@@ -142,7 +142,7 @@ const FeedbackForm = () => {
         </select>
       </div>
 
-      <div className={"border border-gray-400 rounded-md p-4"}>
+      <div className={"border-2 border-gray-400 rounded-md p-4 bg-gray-100"}>
         <label className="block mb-1 font-bold pb-4">
           4. Would you be interested in more accessibility games?
         </label>
