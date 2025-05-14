@@ -21,7 +21,7 @@ const puzzleSolvedContent = {
     <p className={"text-left"}>
       Good job! Form labels require developers to do a bit of "connecting" to
       their respective text fields. This shows what happens when that gets
-      screwed up.
+      screwed up. Turn your screen reader off and tap OK.
       <br />
       <br />
       Also, Jim Thatcher was awesome!

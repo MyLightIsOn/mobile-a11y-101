@@ -23,7 +23,7 @@ const puzzleSolvedContent = {
     <p className={"text-left"}>
       Alternative text is the description of an image that is read to a screen
       reader. When we use images, it is essential to give them good alternative
-      text.
+      text. Turn your screen reader off and tap OK.
     </p>
   ),
 };

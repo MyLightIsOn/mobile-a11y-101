@@ -25,7 +25,7 @@ const puzzleSolvedContent = {
     <p className={"text-left"}>
       That was tough! Tables are very common on the internet, so learning how to
       visualize and navigate them is an essential skill for a screen reader
-      user.
+      user. Turn your screen reader off and tap OK.
     </p>
   ),
 };

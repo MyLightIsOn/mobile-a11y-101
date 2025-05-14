@@ -9,7 +9,8 @@ const puzzleSolvedContent = {
   puzzleNumber: 6,
   description: (
     <p className={"text-left"}>
-      Congratulations! you have solved all of the puzzles.
+      Congratulations! you have solved all of the puzzles. Turn your screen
+      reader off and tap OK.
     </p>
   ),
 };
@@ -19,61 +20,61 @@ const chapters = [
     id: "chapter-1",
     title: "Chapter 1",
     content:
-      "Once upon a time, there was a curious soul who discovered an old mysterious house. They could not resist the lure of learning something new. They cautiously entered. Double tap to mark this chapter as red.",
+      "Once upon a time, there was a curious soul who discovered an old mysterious house. They could not resist the lure of learning something new. They cautiously entered. Double tap to mark this chapter.",
   },
   {
     id: "chapter-2",
     title: "Chapter 2",
     content:
-      "When they entered, the house was drenched in silence. However, they heard sound from somewhere below. The basement perhaps? They unlocked the door and descended. Double tap to mark this chapter as red.",
+      "When they entered, the house was drenched in silence. However, they heard sound from somewhere below. The basement perhaps? They unlocked the door and descended. Double tap to mark this chapter.",
   },
   {
     id: "chapter-3",
     title: "Chapter 3",
     content:
-      "The basement was pitch black and our curious soul could see nothing. That did not matter because our curious soul was also prepared and practice navigating without light. Double tap to mark this chapter as red.",
+      "The basement was pitch black and our adventurer could see nothing. That did not matter because our adventurer was also prepared and spent practice many hours practicing how to navigating without light. Double tap to mark this chapter.",
   },
   {
     id: "chapter-4",
     title: "Chapter 4",
     content:
-      "Next they wandered into the living room. There was an odd looking coffee table covered with buttons. They all said click here, but it was a trap. Double tap to mark this chapter as red.",
+      "Afterwards exploring the basement, they wandered into the living room. There was an odd looking coffee table covered with buttons. They all said click here, but it was a trap. Double tap to mark this chapter.",
   },
   {
     id: "chapter-5",
     title: "Chapter 5",
     content:
-      "This strange house also had an old art gallery with creepy portraits that seemed to be watching. Oddly, there seemed to be a locked door near the portrait of the dog. With no key, our adventurer moved on to the dining room. Double tap to mark this chapter as red.",
+      "This strange house also had an old art gallery with creepy portraits that seemed to be watching. Each picture had a message on the back. After straightening the pictures, our adventurered moved on to the dining room. Double tap to mark this chapter.",
   },
   {
     id: "chapter-6",
     title: "Chapter 6",
     content:
-      "The dining room was set as if a big feast would be served at some unknown date. One setting was for an honored guest. 'I wonder who this guest was?', the adventurer thought as they stepped into the hall and walked towards the study. Double tap to mark this chapter as red.",
+      "The dining room was set as if a big feast would be served at some unknown date. One setting was for an honored guest. 'I wonder who this guest was?', the adventurer thought as they shut the door and walked down the hall towards the study. Double tap to mark this chapter.",
   },
   {
     id: "chapter-7",
     title: "Chapter 7",
     content:
-      "The study room was set as if a big feast would be served at some unknown date. One setting was for an honored guest. 'I wonder who this guest was?', the adventurer thought as they stepped into the hall and walked towards the study. Double tap to mark this chapter as red.",
+      "The study was old and dusty, yet the fireplace blazed, bathing the room with dancing shadows. The adventurer checked every drawer looking for clues. They found a note with the a11y on it. Double tap to mark this chapter.",
   },
   {
     id: "chapter-8",
     title: "Chapter 8",
     content:
-      "The study was old and dusty, yet the fireplace blazed, bathing the room with dancing shadows. The adventurer checked every drawer looking for clues. Double tap to mark this chapter as red.",
+      "It turns out the that a11y was a code. Upon entering into the code, something down the hall unlocked. It sounded like it came from the library. Our adventurer quickly went to find out. Double tap to mark this chapter.",
   },
   {
     id: "chapter-9",
     title: "Chapter 9",
     content:
-      "Lastly, our explorer found a massive library with rows and rows of books that stretched on forever. In the middle, an ancient book with blank pages rested on a pedestal. What secrets does it hide? Double tap to mark this chapter as red.",
+      "Lastly, our explorer found a massive library with rows and rows of books that stretched on forever. In the middle, an ancient book with blank pages rested on a pedestal. What secrets does it hide? Double tap to mark this chapter.",
   },
   {
     id: "chapter-10",
     title: "Chapter 10",
     content:
-      "As our hero departs the mysterious house, they realize that wihtout being able to understand with their ears, they would be lost forever. The end. Double tap to mark this chapter as red.",
+      "As our hero departs the mysterious house, they realize that wihtout being able to understand with their ears, they would be lost forever. The end. Double tap to mark this chapter.",
   },
 ];
 

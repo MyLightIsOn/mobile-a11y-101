@@ -22,7 +22,8 @@ const puzzleSolvedContent = {
   description: (
     <p className={"text-left"}>
       Navigating with headings is something we all do, whether using a screen
-      reader or not. Now you know how to use this powerful feature.
+      reader or not. Now you know how to use this powerful feature. Turn your
+      screen reader off and tap OK.
     </p>
   ),
 };
